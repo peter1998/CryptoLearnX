@@ -11,7 +11,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
-  { path: 'product', component: ProductPageComponent },
+  { path: 'product/:id', component: ProductPageComponent },
   { path: 'cart', component: CartPageComponent },
   { path: 'profile', component: UserProfileComponent },
 ];

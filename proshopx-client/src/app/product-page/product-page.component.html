@@ -1,1 +1,9 @@
-<h1>Product Page</h1>
+<div *ngIf="product">
+  <img [src]="product.imageUrl" alt="{{ product.name }}" />
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+  <p>{{ product.price }}</p>
+  <p>Category: {{ product.category }}</p>
+  <p>Rating: {{ product.rating }}</p>
+  <p>Stock: {{ product.stock }}</p>
+</div>
