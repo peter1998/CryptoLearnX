@@ -1,8 +1,8 @@
-<div class="cart-grid">
-  <div class="cart-item" *ngFor="let item of cart">
+<div class="cart-items">
+  <div class="cart-item" *ngFor="let item of items">
     <img [src]="item.imageUrl" alt="{{ item.name }}" />
     <h2>{{ item.name }}</h2>
+    <p>{{ item.description }}</p>
     <p>{{ item.price }}</p>
-    <p>Quantity: 1</p>
   </div>
 </div>
