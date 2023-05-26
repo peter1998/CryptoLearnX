@@ -1,0 +1,30 @@
+{
+  "name": "proshopx",
+  "version": "1.0.0",
+  "description": "ProShopX is a full-stack, cloud-based e-commerce platform that provides a seamless shopping experience for customers and a robust management system for store owners. It leverages modern technologies and best practices to deliver high performance and scalability.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peter1998/ProShopX.git"
+  },
+  "keywords": [
+    "ProShop",
+    "ECommerce",
+    "FullStack",
+    "cloud-based",
+    "platform",
+    "management",
+    "system",
+    "store",
+    "owners"
+  ],
+  "author": "Peter Matov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peter1998/ProShopX/issues"
+  },
+  "homepage": "https://github.com/peter1998/ProShopX#readme"
+}
