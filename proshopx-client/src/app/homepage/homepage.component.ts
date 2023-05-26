@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { PRODUCTS } from '../mock-products';
+import { Product, PRODUCTS } from '../mock-products';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-homepage',
@@ -8,15 +9,12 @@ import { PRODUCTS } from '../mock-products';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-  products = PRODUCTS;
+  products: Product[] = PRODUCTS;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private cartService: CartService) {}
 
-  viewProduct(id: number) {
-    if (id === 1) {
-      this.router.navigate(['/cart']);
-    } else {
-      this.router.navigate(['/product', id]);
-    }
+  viewProduct(product: Product) {
+    this.cartService.addToCart(product);
+    this.router.navigate(['/product', product.id]);
   }
 }
