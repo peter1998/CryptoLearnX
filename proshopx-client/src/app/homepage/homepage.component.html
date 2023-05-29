@@ -1,9 +1,12 @@
-<div class="product-grid">
-  <div class="product-card" *ngFor="let product of products">
-    <img [src]="product.imageUrl" alt="{{ product.name }}" />
-    <h2>{{ product.name }}</h2>
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }}</p>
-    <button (click)="viewProduct(product)">View Details</button>
+<div class="cryptoCurrency-grid">
+  <div
+    class="cryptoCurrency-card"
+    *ngFor="let cryptoCurrency of cryptocurrencies"
+  >
+    <img [src]="cryptoCurrency.imageUrl" alt="{{ cryptoCurrency.name }}" />
+    <h2>{{ cryptoCurrency.name }}</h2>
+    <p>{{ cryptoCurrency.description }}</p>
+    <p>{{ cryptoCurrency.price }}</p>
+    <button (click)="viewCryptoCurrency(cryptoCurrency)">View Details</button>
   </div>
 </div>

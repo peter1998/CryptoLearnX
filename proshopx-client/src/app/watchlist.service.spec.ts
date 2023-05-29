@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { WatchlistService } from './watchlist.service';
 
-describe('CartService', () => {
+describe('WatchlistService', () => {
   let service: WatchlistService;
 
   beforeEach(() => {

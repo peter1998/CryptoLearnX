@@ -9,12 +9,12 @@ import { WatchlistService } from '../watchlist.service';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-  products: CryptoCurrency[] = CRYPTOCURRENCIES;
+  cryptocurrencies: CryptoCurrency[] = CRYPTOCURRENCIES;
 
-  constructor(private router: Router, private cartService: WatchlistService) {}
+  constructor(private router: Router, private watchList: WatchlistService) {}
 
-  viewProduct(product: CryptoCurrency) {
-    this.cartService.addToWatchlist(product);
-    this.router.navigate(['/product', product.id]);
+  viewCryptoCurrency(cryptoCurrency: CryptoCurrency) {
+    this.watchList.addToWatchlist(cryptoCurrency);
+    this.router.navigate(['/cryptoCurrency', cryptoCurrency.id]);
   }
 }
