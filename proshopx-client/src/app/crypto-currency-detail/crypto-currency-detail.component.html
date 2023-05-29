@@ -1,0 +1,7 @@
+<div *ngIf="cryptoCurrency" class="crypto-currency-details">
+  <img [src]="cryptoCurrency.imageUrl" alt="{{ cryptoCurrency.name }}" />
+  <h2>{{ cryptoCurrency.name }}</h2>
+  <p>{{ cryptoCurrency.description }}</p>
+  <p>{{ cryptoCurrency.price }}</p>
+  <button (click)="addToWatchlist(cryptoCurrency)">Add to Watchlist</button>
+</div>

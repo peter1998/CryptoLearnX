@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Product, PRODUCTS } from '../mock-products';
-import { CartService } from '../cart.service';
+import { CryptoCurrency, CRYPTOCURRENCIES } from '../mock-crypto-currencies';
+import { WatchlistService } from '../watchlist.service';
 
 @Component({
   selector: 'app-homepage',
@@ -9,12 +9,12 @@ import { CartService } from '../cart.service';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-  products: Product[] = PRODUCTS;
+  products: CryptoCurrency[] = CRYPTOCURRENCIES;
 
-  constructor(private router: Router, private cartService: CartService) {}
+  constructor(private router: Router, private cartService: WatchlistService) {}
 
-  viewProduct(product: Product) {
-    this.cartService.addToCart(product);
+  viewProduct(product: CryptoCurrency) {
+    this.cartService.addToWatchlist(product);
     this.router.navigate(['/product', product.id]);
   }
 }

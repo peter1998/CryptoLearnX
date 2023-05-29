@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../mock-products';
-import { CartService } from '../cart.service';
+import { CryptoCurrency } from '../mock-crypto-currencies';
+import { WatchlistService } from '../watchlist.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,9 +8,9 @@ import { CartService } from '../cart.service';
   styleUrls: ['./cart-page.component.css'],
 })
 export class CartPageComponent implements OnInit {
-  items: Product[] = [];
+  items: CryptoCurrency[] = [];
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: WatchlistService) {}
 
   ngOnInit() {
     this.items = this.cartService.getItems();
