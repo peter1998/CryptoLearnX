@@ -1,12 +1,21 @@
 <div class="homepage-sections">
-  <div class="homepage-section" (click)="navigateTo('/cryptocurrency')">
-    <img src="../../../assets/bitcoin.jpg" alt="Cryptocurrency" />
-    <h2>Cryptocurrency</h2>
-    <p>
-      Explore the world of cryptocurrencies, view real-time price data, and add
-      your favorites to your watchlist.
-    </p>
+  <!-- homepage.component.html -->
+
+  <div class="homepage-sections">
+    <div
+      class="homepage-section"
+      (click)="navigateTo('/cryptocurrency-landing')"
+    >
+      <img src="../../../assets/bitcoin.jpg" alt="Cryptocurrency" />
+      <h2>Cryptocurrency</h2>
+      <p>
+        Explore the world of cryptocurrencies, view real-time price data, and
+        add your favorites to your watchlist.
+      </p>
+    </div>
+    <!-- other sections... -->
   </div>
+
   <div class="homepage-section" (click)="navigateTo('/iot')">
     <img src="../../../assets/iot.jpg" alt="IoT" />
     <h2>IoT</h2>

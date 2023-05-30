@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InternetOfThingsComponent } from './internet-of-things/internet-of-things.component';
 import { CyberSecurityComponent } from './cyber-security/cyber-security.component';
 import { CryptoCurrencyListComponent } from './crypto-currency-list/crypto-currency-list.component';
+import { CryptoCurrencyLandingComponent } from './crypto-currency-landing/crypto-currency-landing.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
     InternetOfThingsComponent,
     CyberSecurityComponent,
     CryptoCurrencyListComponent,
+    CryptoCurrencyLandingComponent,
   ],
   imports: [
     BrowserModule,
