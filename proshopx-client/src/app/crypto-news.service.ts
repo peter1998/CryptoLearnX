@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/enviroments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,8 @@ import { Observable } from 'rxjs';
 export class CryptoNewsService {
   private url = 'https://crypto-news16.p.rapidapi.com/news/all';
   private headers = new HttpHeaders({
-    'X-RapidAPI-Key': 'e7660d5bf4msh0a887a98312f862p1fd89djsn4da262cde5c0',
-    'X-RapidAPI-Host': 'crypto-news16.p.rapidapi.com',
+    'X-RapidAPI-Key': environment.RapidApiKey,
+    'X-RapidAPI-Host': environment.RapidApiHost,
   });
 
   constructor(private http: HttpClient) {}
