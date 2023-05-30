@@ -50,3 +50,12 @@
 .price-down {
   color: #ff0000;
 }
+
+.price-stable {
+  color: #cccccc;
+}
+
+.price-change {
+  font-size: 12px;
+  margin-left: 4px;
+}
