@@ -1,0 +1,22 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.crypto-news {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.news-article {
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+mat-card-actions {
+  justify-content: flex-end;
+}

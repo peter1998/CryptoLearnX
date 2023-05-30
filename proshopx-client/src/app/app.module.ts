@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +17,7 @@ import { InternetOfThingsComponent } from './internet-of-things/internet-of-thin
 import { CyberSecurityComponent } from './cyber-security/cyber-security.component';
 import { CryptoCurrencyListComponent } from './crypto-currency-list/crypto-currency-list.component';
 import { CryptoCurrencyLandingComponent } from './crypto-currency-landing/crypto-currency-landing.component';
+import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -33,6 +37,7 @@ const routes: Routes = [
     CyberSecurityComponent,
     CryptoCurrencyListComponent,
     CryptoCurrencyLandingComponent,
+    CryptoNewsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,9 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

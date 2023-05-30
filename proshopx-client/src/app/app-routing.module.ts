@@ -9,6 +9,7 @@ import { CryptoCurrencyLandingComponent } from './crypto-currency-landing/crypto
 import { InternetOfThingsComponent } from './internet-of-things/internet-of-things.component';
 import { CyberSecurityComponent } from './cyber-security/cyber-security.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'iot', component: InternetOfThingsComponent },
   { path: 'cybersecurity', component: CyberSecurityComponent },
   { path: 'watchlist', component: CartPageComponent },
+  { path: 'crypto-news', component: CryptoNewsComponent },
   // other routes...
 ];
 
