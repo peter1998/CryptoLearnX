@@ -18,6 +18,8 @@ import { CyberSecurityComponent } from './cyber-security/cyber-security.componen
 import { CryptoCurrencyListComponent } from './crypto-currency-list/crypto-currency-list.component';
 import { CryptoCurrencyLandingComponent } from './crypto-currency-landing/crypto-currency-landing.component';
 import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
+import { LivePriceTickerComponent } from './live-price-ticker/live-price-ticker.component';
+import { DiscussionForumComponent } from './discussion-forum/discussion-forum.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -38,6 +40,8 @@ const routes: Routes = [
     CryptoCurrencyListComponent,
     CryptoCurrencyLandingComponent,
     CryptoNewsComponent,
+    LivePriceTickerComponent,
+    DiscussionForumComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,17 +1,41 @@
+/* crypto-currency-landing.component.css */
+
 .landing-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f5f5f5;
 }
 
 .landing-card {
-  max-width: 800px;
+  width: 900px;
   padding: 20px;
-  margin: 20px;
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #fff;
 }
 
-mat-card-actions {
-  justify-content: space-between;
+.crypto-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.crypto-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.crypto-button {
+  margin-right: 10px;
+}
+
+.crypto-button:hover {
+  background-color: #808080;
+  color: #fff;
 }
