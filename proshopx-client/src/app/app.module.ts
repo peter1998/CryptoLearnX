@@ -10,6 +10,9 @@ import { CryptoCurrencyDetailComponent } from './crypto-currency-detail/crypto-c
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InternetOfThingsComponent } from './internet-of-things/internet-of-things.component';
+import { CyberSecurityComponent } from './cyber-security/cyber-security.component';
+import { CryptoCurrencyListComponent } from './crypto-currency-list/crypto-currency-list.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -25,6 +28,9 @@ const routes: Routes = [
     CryptoCurrencyDetailComponent,
     CartPageComponent,
     UserProfileComponent,
+    InternetOfThingsComponent,
+    CyberSecurityComponent,
+    CryptoCurrencyListComponent,
   ],
   imports: [
     BrowserModule,

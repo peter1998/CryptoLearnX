@@ -1,13 +1,26 @@
-<div class="cryptoCurrency-grid">
-  <div
-    class="cryptoCurrency-card"
-    *ngFor="let cryptoCurrency of cryptocurrencies"
-  >
-    <img [src]="cryptoCurrency.image" alt="{{ cryptoCurrency.name }}" />
-    <h2>{{ cryptoCurrency.name }}</h2>
-    <p>{{ cryptoCurrency.current_price }}</p>
-    <button (click)="addToWatchlistAndNavigate(cryptoCurrency)">
-      View Details
-    </button>
+<div class="homepage-sections">
+  <div class="homepage-section" (click)="navigateTo('/cryptocurrency')">
+    <img src="../../../assets/bitcoin.jpg" alt="Cryptocurrency" />
+    <h2>Cryptocurrency</h2>
+    <p>
+      Explore the world of cryptocurrencies, view real-time price data, and add
+      your favorites to your watchlist.
+    </p>
+  </div>
+  <div class="homepage-section" (click)="navigateTo('/iot')">
+    <img src="../../../assets/iot.jpg" alt="IoT" />
+    <h2>IoT</h2>
+    <p>
+      Learn about the Internet of Things, discover the latest IoT devices, and
+      understand how they're transforming our world.
+    </p>
+  </div>
+  <div class="homepage-section" (click)="navigateTo('/cybersecurity')">
+    <img src="../../../assets//cyber-security.jpg" alt="Cybersecurity" />
+    <h2>Cybersecurity</h2>
+    <p>
+      Stay informed about the latest cybersecurity threats, learn how to protect
+      yourself online, and explore careers in cybersecurity.
+    </p>
   </div>
 </div>

@@ -1,0 +1,13 @@
+<!-- crypto-currency-list.component.html -->
+
+<div *ngIf="cryptocurrencies.length > 0" class="crypto-currency-list">
+  <div
+    *ngFor="let cryptoCurrency of cryptocurrencies"
+    class="crypto-currency-item"
+  >
+    <img [src]="cryptoCurrency.image" alt="{{ cryptoCurrency.name }}" />
+    <h2>{{ cryptoCurrency.name }}</h2>
+    <p>Current Price: {{ cryptoCurrency.current_price }}</p>
+    <a [routerLink]="['/cryptocurrency', cryptoCurrency.id]">View Details</a>
+  </div>
+</div>
