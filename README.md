@@ -1,10 +1,10 @@
-# ProShopX
+# CryptoLearnX
 
-ProShopX is a full-stack, cloud-based e-commerce platform that provides a seamless shopping experience for customers and a robust management system for store owners. It leverages modern technologies and best practices to deliver high performance and scalability.
+CryptoLearnX is a full-stack, cloud-based platform that provides a comprehensive learning experience for those interested in cryptocurrencies. It leverages modern technologies and best practices to deliver high performance and scalability.
 
 ## Application Architecture
 
-ProShopX is a full-stack application with a front-end built with Angular and a back-end built with .NET Core.
+CryptoLearnX is a full-stack application with a front-end built with Angular and a back-end built with .NET Core.
 
 - **Front-End (Angular):** The front-end is a Single Page Application (SPA) built with Angular. It provides a dynamic and interactive user interface.
 
@@ -18,38 +18,48 @@ ProShopX is a full-stack application with a front-end built with Angular and a b
 
 The user interface is clean, intuitive, and responsive. Here are the key pages/components:
 
-- **Home Page:** Displays featured products and categories. Implements a carousel for featured products and a grid view for categories.
+- **Home Page:** Displays featured cryptocurrencies and categories. Implements a carousel for featured cryptocurrencies and a grid view for categories.
 
-- **Product Page:** Shows product details, images, reviews, and add to cart button. Implements a zoom feature for images and a rating system for reviews.
+- **Cryptocurrency Page:** Shows cryptocurrency details, images, real-time price data, and add to watchlist button. Implements a zoom feature for images and a rating system for reviews.
 
-- **Cart Page:** Shows items in the cart, allows quantity changes, and provides a checkout button. Implements a mini cart that shows the current items and total price.
+- **Watchlist Page:** Shows items in the watchlist, allows quantity changes, and provides a checkout button. Implements a mini cart that shows the current items and total price.
 
-- **Checkout Page:** Collects shipping and payment information, and places the order. Implements a multi-step process for shipping, payment, and confirmation.
-
-- **Order Page:** Shows order details and status. Implements a tracking system that shows the delivery status of the order.
-
-- **Admin Dashboard:** Manages products, orders, and users. Implements charts and graphs for sales and user data.
+- **Learning Resources:** Include a section with educational resources about cryptocurrencies. This could include articles, videos, tutorials, quizzes, etc. You could categorize the resources by topic (e.g., "What is Bitcoin?", "How does blockchain work?", "Investing in cryptocurrencies") to make it easy for users to find what they're interested in.
 
 ## Database Schema
 
-The database has collections for users, products, orders, and reviews:
+The database has collections for users, cryptocurrencies, and watchlist:
 
-- **Users:** Stores user information like name, email, password (hashed), isAdmin (boolean), and a list of favorite products.
+- **Users:** Stores user information like name, email, password (hashed), isAdmin (boolean), and a list of favorite cryptocurrencies.
 
-- **Products:** Stores product information like name, description, price, image URLs, category, stock quantity, and a list of related products.
+- **Cryptocurrencies:** Stores cryptocurrency information like name, description, price, image URLs, market cap, volume, and a list of related cryptocurrencies.
 
-- **Orders:** Stores order information like user, order items, shipping address, payment method, payment result, delivery status, and order history.
-
-- **Reviews:** Stores review information like user, product, rating, comment, and date of review.
+- **Watchlist:** Stores watchlist information like user, watchlist items, and date of watchlist.
 
 ## RESTful APIs
 
 The front-end and back-end communicate via RESTful APIs:
 
-- **User APIs:** Register, login, get user profile, update user profile, get favorite products, add to favorite products.
+- **User APIs:** Register, login, get user profile, update user profile, get favorite cryptocurrencies, add to favorite cryptocurrencies.
 
-- **Product APIs:** Get all products, get product by ID, create product, update product, delete product, get related products.
+- **Cryptocurrency APIs:** Get all cryptocurrencies, get cryptocurrency by ID, create cryptocurrency, update cryptocurrency, delete cryptocurrency, get related cryptocurrencies.
 
-- **Order APIs:** Create order, get order by ID, update order to paid, update order to delivered, get order history.
+- **Watchlist APIs:** Create watchlist, get watchlist by ID, update watchlist, delete watchlist.
 
-- **Review APIs:** Create review, get all reviews for a product, get recent reviews.
+## Currently Working On
+
+Enhancing the homepage with the following features:
+
+- **Hero Section:** A compelling headline and a brief description of what the app offers with a call-to-action button.
+
+- **Featured Cryptocurrencies:** Highlighting some popular or trending cryptocurrencies right on the homepage.
+
+- **Latest News or Updates:** Keeping users informed about the latest news or updates in the cryptocurrency world.
+
+- **Interactive Chart or Infographic:** An interactive chart or infographic that shows interesting data about cryptocurrencies.
+
+- **User Testimonials or Reviews:** Showcasing some testimonials or reviews on the homepage to help build trust with new users.
+
+- **Footer:** Including links to important pages like the About page, Contact page, and Terms of Service.
+
+- **Responsive and User-Friendly Design:** Ensuring that the homepage looks great and is easy to navigate on all devices, from desktops to smartphones.
