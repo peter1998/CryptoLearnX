@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CryptoCurrency } from './mock-crypto-currencies';
+import { CryptoCurrency } from './crypto-currency.service';
 
 @Injectable({
   providedIn: 'root',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CryptoCurrency, CRYPTOCURRENCIES } from '../mock-crypto-currencies';
+import { CryptoCurrencyService } from '../crypto-currency.service';
 import { WatchlistService } from '../watchlist.service';
 
 @Component({
@@ -9,23 +9,32 @@ import { WatchlistService } from '../watchlist.service';
   styleUrls: ['./crypto-currency-detail.component.css'],
 })
 export class CryptoCurrencyDetailComponent implements OnInit {
-  cryptoCurrency: CryptoCurrency | undefined;
+  cryptoCurrency: any;
+  items: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private watchlistService: WatchlistService
+    private watchlistService: WatchlistService,
+    private cryptoCurrencyService: CryptoCurrencyService
   ) {}
 
   ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.cryptoCurrency = CRYPTOCURRENCIES.find(
-      (cryptoCurrency) => cryptoCurrency.id === id
-    );
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.cryptoCurrencyService.getCryptoCurrency(id).subscribe(
+        (data) => {
+          this.cryptoCurrency = data;
+        },
+        (error) => {
+          console.error('Error fetching cryptocurrency', error);
+        }
+      );
+    }
+    this.items = this.watchlistService.getItems();
   }
 
-  addToWatchlist(cryptoCurrency: CryptoCurrency) {
+  addToWatchlist(cryptoCurrency: any) {
     this.watchlistService.addToWatchlist(cryptoCurrency);
-    this.router.navigate(['/watchlist']);
   }
 }

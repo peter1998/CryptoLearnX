@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CryptoCurrency } from '../mock-crypto-currencies';
+import { CryptoCurrency } from '../crypto-currency.service';
 import { WatchlistService } from '../watchlist.service';
 
 @Component({

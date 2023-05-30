@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CryptoCurrency, CRYPTOCURRENCIES } from '../mock-crypto-currencies';
+import { CryptoCurrencyService } from '../crypto-currency.service';
 import { WatchlistService } from '../watchlist.service';
 
 @Component({
@@ -9,11 +9,26 @@ import { WatchlistService } from '../watchlist.service';
   styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent {
-  cryptocurrencies: CryptoCurrency[] = CRYPTOCURRENCIES;
+  cryptocurrencies: any[] = [];
 
-  constructor(private router: Router, private watchList: WatchlistService) {}
+  constructor(
+    private router: Router,
+    private watchList: WatchlistService,
+    private cryptoCurrencyService: CryptoCurrencyService
+  ) {}
 
-  viewCryptoCurrency(cryptoCurrency: CryptoCurrency) {
+  ngOnInit() {
+    this.cryptoCurrencyService.getCryptocurrencies().subscribe(
+      (data) => {
+        this.cryptocurrencies = data;
+      },
+      (error) => {
+        console.error('Error fetching cryptocurrencies', error);
+      }
+    );
+  }
+
+  addToWatchlistAndNavigate(cryptoCurrency: any) {
     this.watchList.addToWatchlist(cryptoCurrency);
     this.router.navigate(['/cryptoCurrency', cryptoCurrency.id]);
   }

@@ -1,8 +1,7 @@
-<div class="cart-items">
-  <div class="cart-item" *ngFor="let item of items">
-    <img [src]="item.imageUrl" alt="{{ item.name }}" />
+<div class="watchlist-items">
+  <div class="watchlist-item" *ngFor="let item of items">
+    <img [src]="item.image" alt="{{ item.name }}" />
     <h2>{{ item.name }}</h2>
-    <p>{{ item.description }}</p>
-    <p>{{ item.price }}</p>
+    <p>{{ item.current_price }}</p>
   </div>
 </div>

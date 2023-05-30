@@ -3,10 +3,11 @@
     class="cryptoCurrency-card"
     *ngFor="let cryptoCurrency of cryptocurrencies"
   >
-    <img [src]="cryptoCurrency.imageUrl" alt="{{ cryptoCurrency.name }}" />
+    <img [src]="cryptoCurrency.image" alt="{{ cryptoCurrency.name }}" />
     <h2>{{ cryptoCurrency.name }}</h2>
-    <p>{{ cryptoCurrency.description }}</p>
-    <p>{{ cryptoCurrency.price }}</p>
-    <button (click)="viewCryptoCurrency(cryptoCurrency)">View Details</button>
+    <p>{{ cryptoCurrency.current_price }}</p>
+    <button (click)="addToWatchlistAndNavigate(cryptoCurrency)">
+      View Details
+    </button>
   </div>
 </div>
