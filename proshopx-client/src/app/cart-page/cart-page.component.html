@@ -1,6 +1,7 @@
 <div class="watchlist-items">
   <div class="watchlist-item" *ngFor="let item of items">
     <img [src]="item.image" alt="{{ item.name }}" />
+    <!-- Change this line -->
     <h2>{{ item.name }}</h2>
     <p>{{ item.current_price }}</p>
   </div>

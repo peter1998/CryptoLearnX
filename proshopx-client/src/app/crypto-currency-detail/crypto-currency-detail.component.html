@@ -1,7 +1,13 @@
-<div class="watchlist-items">
-  <div class="watchlist-item" *ngFor="let item of items">
-    <img [src]="item.image" alt="{{ item.name }}" />
-    <h2>{{ item.name }}</h2>
-    <p>{{ item.current_price }}</p>
-  </div>
+<!-- crypto-currency-detail.component.html -->
+
+<div *ngIf="cryptoCurrency" class="crypto-currency-details">
+  <img [src]="cryptoCurrency.image.large" alt="{{ cryptoCurrency.name }}" />
+
+  <h2>{{ cryptoCurrency.name }}</h2>
+  <p>{{ cryptoCurrency.description }}</p>
+  <p>Current Price: {{ cryptoCurrency.market_data.current_price.usd }}</p>
+  <p>Market Cap: {{ cryptoCurrency.market_data.market_cap.usd }}</p>
+  <p>Volume: {{ cryptoCurrency.market_data.total_volume.usd }}</p>
+  <p>Circulating Supply: {{ cryptoCurrency.market_data.circulating_supply }}</p>
+  <button (click)="addToWatchlist()">Add to Watchlist</button>
 </div>
