@@ -1,0 +1,18 @@
+<div class="chart-container">
+  <select [(ngModel)]="selectedCrypto.id" (change)="onCryptoChange($event)">
+    <option *ngFor="let crypto of cryptocurrencies" [value]="crypto.id">
+      {{ crypto.name }}
+    </option>
+  </select>
+
+  <canvas
+    baseChart
+    [datasets]="chartData"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [plugins]="chartPlugins"
+    [legend]="chartLegend"
+    [type]="chartType"
+  >
+  </canvas>
+</div>

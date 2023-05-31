@@ -20,6 +20,9 @@ import { CryptoCurrencyLandingComponent } from './crypto-currency-landing/crypto
 import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
 import { LivePriceTickerComponent } from './live-price-ticker/live-price-ticker.component';
 import { DiscussionForumComponent } from './discussion-forum/discussion-forum.component';
+import { NgChartsModule } from 'ng2-charts';
+import { CryptoInteractiveChartComponent } from './crypto-interactive-chart/crypto-interactive-chart.component';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -42,6 +45,7 @@ const routes: Routes = [
     CryptoNewsComponent,
     LivePriceTickerComponent,
     DiscussionForumComponent,
+    CryptoInteractiveChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,8 @@ const routes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatProgressSpinnerModule,
+    NgChartsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
