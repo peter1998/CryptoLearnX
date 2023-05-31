@@ -2,7 +2,9 @@
 
 CryptoLearnX is a full-stack, cloud-based platform that provides a comprehensive learning experience for those interested in cryptocurrencies. It leverages modern technologies and best practices to deliver high performance and scalability.
 
-![image](https://github.com/peter1998/CryptoLearnX/assets/19347046/b3e15692-1e1c-49b6-955f-a945481dabf2)
+![image](https://github.com/peter1998/CryptoLearnX/assets/19347046/21377ff3-93f7-4734-9984-62c8be95a73e)
+
+![image](https://github.com/peter1998/CryptoLearnX/assets/19347046/b3e15692-1e1c-49b6-955f-a945481dabf2) 
 
 
 ## Getting Started
