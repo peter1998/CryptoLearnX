@@ -37,6 +37,12 @@
   margin-bottom: 10px;
 }
 
+.crypto-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .current-price {
   margin-top: 5px;
   font-size: 16px;
@@ -58,4 +64,18 @@
 .price-change {
   font-size: 12px;
   margin-left: 4px;
+}
+
+.crypto-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.high-price,
+.low-price,
+.market-cap,
+.volume {
+  font-size: 14px;
+  color: #ffffff;
 }
