@@ -1,5 +1,5 @@
 <div class="chart-container">
-  <select [(ngModel)]="selectedCrypto.id" (change)="onCryptoChange($event)">
+  <select (change)="onCryptoChange($event)">
     <option *ngFor="let crypto of cryptocurrencies" [value]="crypto.id">
       {{ crypto.name }}
     </option>
