@@ -20,6 +20,7 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* This will center the content vertically */
+  overflow: hidden;
 }
 
 .mat-card-header .mat-card-header-text {
@@ -44,6 +45,8 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* This will center the content vertically */
+  height: 60vh; /* Adjust this value according to your needs */
+  overflow-y: auto; /* This will add a scrollbar when the content exceeds the container's height */
 }
 
 .mat-card-actions {
