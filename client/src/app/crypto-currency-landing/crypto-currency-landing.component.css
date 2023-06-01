@@ -4,11 +4,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  height: 100vh; /* Adjust this to fit the entire viewport height */
+  width: 100vw; /* Adjust this to fit the entire viewport width */
+  margin: 0;
+  padding: 0;
 }
 
 .landing-card {
-  width: 900px;
+  width: 100%; /* Adjust this to change the width of the card relative to the container */
+  max-width: 100%; /* Set a max-width to prevent the card from becoming too wide on large screens */
   padding: 20px;
   text-align: center;
   background-color: #1a1a1a;
@@ -33,7 +37,7 @@
 }
 
 .crypto-button {
-  margin-right: 10px;
+  margin: 5px;
 }
 
 .crypto-button:hover {
