@@ -13,6 +13,7 @@
 .landing-card {
   width: 100%; /* Adjust this to change the width of the card relative to the container */
   max-width: 100%; /* Set a max-width to prevent the card from becoming too wide on large screens */
+  height: 100%;
   padding: 20px;
   text-align: center;
   background-color: #1a1a1a;
@@ -49,12 +50,14 @@
   overflow-y: auto; /* This will add a scrollbar when the content exceeds the container's height */
 }
 
-.mat-card-actions {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; /* This will center the buttons horizontally */
+mat-card .mdc-card__actions {
+  min-height: 156px !important;
+  padding: 8px !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
 }
 
 .crypto-button {
