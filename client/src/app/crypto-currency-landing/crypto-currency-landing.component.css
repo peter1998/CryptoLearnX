@@ -17,6 +17,9 @@
   text-align: center;
   background-color: #1a1a1a;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the content vertically */
 }
 
 .mat-card-header .mat-card-header-text {
@@ -34,6 +37,21 @@
   font-size: 16px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.mat-card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the content vertically */
+}
+
+.mat-card-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; /* This will center the buttons horizontally */
 }
 
 .crypto-button {
