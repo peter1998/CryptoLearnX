@@ -59,9 +59,11 @@
 
 .crypto-button {
   margin: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .crypto-button:hover {
   background-color: #808080;
   color: #fff;
+  transform: scale(1.55);
 }

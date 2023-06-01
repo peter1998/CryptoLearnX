@@ -15,7 +15,18 @@
 }
 
 .live-price-ticker-horizontal {
-  /* Remove this class */
+  display: flex;
+  flex-direction: column;
+  animation: tickerScroll 333s linear infinite;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
 
 .live-price-ticker-item {
