@@ -4,6 +4,8 @@
   background-color: #171717;
   border-radius: 5px;
   overflow: hidden;
+  height: 200px; /* Set a fixed height for the container */
+  overflow-y: auto; /* Add a vertical scrollbar when the content exceeds the container's height */
 }
 
 .live-price-ticker-title {
@@ -13,13 +15,7 @@
 }
 
 .live-price-ticker-horizontal {
-  display: flex;
-  flex-wrap: nowrap;
-  padding-bottom: 10px;
-  margin-bottom: -10px;
-  overflow-x: auto; /* Enable horizontal scrolling when content exceeds the container's width */
-  scrollbar-width: thin; /* Add a scrollbar with reduced width */
-  scrollbar-color: #888888 #262626; /* Customize the scrollbar colors */
+  /* Remove this class */
 }
 
 .live-price-ticker-item {
@@ -32,8 +28,6 @@
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   min-width: 150px;
-  flex: 0 0 auto; /* Prevent the price ticker items from growing or shrinking */
-  white-space: nowrap; /* Prevent line breaks for the price ticker items */
 }
 
 .crypto-icon {
