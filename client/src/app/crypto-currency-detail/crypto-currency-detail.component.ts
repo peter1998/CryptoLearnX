@@ -54,4 +54,8 @@ export class CryptoCurrencyDetailComponent implements OnInit {
     this.watchlistService.addToWatchlist(watchlistItem);
     this.router.navigate(['/watchlist']);
   }
+
+  goBack(): void {
+    this.router.navigate(['/cryptocurrency']);
+  }
 }
