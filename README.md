@@ -6,6 +6,9 @@ CryptoLearnX is a full-stack, cloud-based platform that provides a comprehensive
 
 ![image](https://github.com/peter1998/CryptoLearnX/assets/19347046/b3e15692-1e1c-49b6-955f-a945481dabf2) 
 
+![image](https://github.com/peter1998/CryptoLearnX/assets/19347046/61b506eb-df46-44fd-951b-975824070c26)
+
+
 
 ## Getting Started
 To get the project running locally:
