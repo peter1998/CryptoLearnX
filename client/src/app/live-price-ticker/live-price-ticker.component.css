@@ -17,7 +17,7 @@
 .live-price-ticker-horizontal {
   display: flex;
   flex-direction: column;
-  animation: tickerScroll 333s linear infinite;
+  animation: tickerScroll 444s linear infinite;
 }
 
 @keyframes tickerScroll {

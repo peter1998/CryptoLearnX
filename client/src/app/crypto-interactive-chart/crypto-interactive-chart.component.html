@@ -5,6 +5,13 @@
     </option>
   </select>
 
+  <img
+    *ngIf="selectedCrypto"
+    [src]="selectedCrypto.image"
+    alt="Crypto Icon"
+    class="crypto-icon"
+  />
+
   <canvas
     baseChart
     [datasets]="chartData"

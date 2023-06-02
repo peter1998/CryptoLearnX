@@ -51,7 +51,7 @@
 }
 
 mat-card .mdc-card__actions {
-  min-height: 156px !important;
+  min-height: 30px !important;
   padding: 8px !important;
   width: 100% !important;
   display: flex !important;

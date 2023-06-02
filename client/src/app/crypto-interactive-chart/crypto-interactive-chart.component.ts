@@ -37,7 +37,7 @@ export class CryptoInteractiveChartComponent implements OnInit {
   chartType: ChartType = 'line';
 
   cryptocurrencies: CryptoCurrency[] = [];
-  selectedCrypto!: CryptoCurrency;
+  selectedCrypto?: CryptoCurrency;
 
   constructor(private cryptoService: CryptoCurrencyService) {}
 
@@ -71,7 +71,16 @@ export class CryptoInteractiveChartComponent implements OnInit {
   onCryptoChange(event: Event): void {
     const target = event.target as HTMLSelectElement | null;
     if (target) {
-      this.updateChart(target.value);
+      const selectedCrypto = this.cryptocurrencies.find(
+        (crypto) => crypto.id === target.value
+      );
+      if (selectedCrypto) {
+        this.selectedCrypto = selectedCrypto;
+        this.updateChart(this.selectedCrypto.id);
+      } else {
+        // Handle the case when selectedCrypto is undefined
+        // For example, you can clear the chart or show an error message
+      }
     }
   }
 }
