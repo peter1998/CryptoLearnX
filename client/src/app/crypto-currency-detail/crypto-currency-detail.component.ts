@@ -26,6 +26,7 @@ export class CryptoCurrencyDetailComponent implements OnInit {
       this.cryptoCurrencyService.getCryptoCurrency(id).subscribe(
         (data) => {
           this.cryptoCurrency = data;
+          this.cryptoCurrency.desc = data.description['en'].split('\n')[0];
           console.log(this.cryptoCurrency);
         },
         (error) => {
