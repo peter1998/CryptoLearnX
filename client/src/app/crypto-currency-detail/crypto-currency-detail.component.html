@@ -4,10 +4,34 @@
   <img [src]="cryptoCurrency.image.large" alt="{{ cryptoCurrency.name }}" />
 
   <h2>{{ cryptoCurrency.name }}</h2>
-  <p>{{ cryptoCurrency.desc}}</p>
-  <p>Current Price: {{ cryptoCurrency.market_data.current_price.usd }}</p>
-  <p>Market Cap: {{ cryptoCurrency.market_data.market_cap.usd }}</p>
-  <p>Volume: {{ cryptoCurrency.market_data.total_volume.usd }}</p>
-  <p>Circulating Supply: {{ cryptoCurrency.market_data.circulating_supply }}</p>
+  <div class="description">
+    <p>{{ cryptoCurrency.desc }}</p>
+  </div>
+  <div class="data">
+    <p>Current Price: {{ cryptoCurrency.market_data.current_price.usd }}</p>
+    <p>Market Cap: {{ cryptoCurrency.market_data.market_cap.usd }}</p>
+    <p>Volume: {{ cryptoCurrency.market_data.total_volume.usd }}</p>
+    <p>
+      Circulating Supply: {{ cryptoCurrency.market_data.circulating_supply }}
+    </p>
+    <p>
+      Highest Price in the last 24 hours:
+      {{ cryptoCurrency.market_data.high_24h.usd }}
+    </p>
+    <p>
+      Lowest Price in the last 24 hours:
+      {{ cryptoCurrency.market_data.low_24h.usd }}
+    </p>
+    <p>
+      Price Change in the last 24 hours:
+      {{
+        cryptoCurrency.market_data.price_change_percentage_24h_in_currency.usd
+      }}%
+    </p>
+    <p>Rank: {{ cryptoCurrency.market_cap_rank }}</p>
+  </div>
+  <a [href]="cryptoCurrency.links.homepage[0]" target="_blank"
+    >Official Website</a
+  >
   <button (click)="addToWatchlist()">Add to Watchlist</button>
 </div>
