@@ -14,7 +14,7 @@
   width: 100%; /* Adjust this to change the width of the card relative to the container */
   max-width: 100%; /* Set a max-width to prevent the card from becoming too wide on large screens */
   height: 100%;
-  padding: 20px;
+  /* padding: 20px; */
   text-align: center;
   background-color: #1a1a1a;
   color: #fff;
