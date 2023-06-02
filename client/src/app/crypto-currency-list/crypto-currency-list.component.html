@@ -22,9 +22,17 @@
       <p>Current Price: {{ cryptoCurrency.current_price }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button [routerLink]="['/cryptocurrency', cryptoCurrency.id]">
+      <button
+        mat-button
+        [routerLink]="['/cryptocurrency', cryptoCurrency.id]"
+        class="view-details-button"
+      >
         View Details
       </button>
     </mat-card-actions>
   </mat-card>
 </div>
+
+<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+  Back to Landing Page
+</button>

@@ -30,3 +30,34 @@
 .crypto-currency-item p {
   color: #666;
 }
+
+.view-details-button {
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-details-button:hover {
+  background-color: #0056b3;
+}
+
+.back-to-landing-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  background-color: #ff7700;
+  color: #fff;
+  border: none;
+  border-radius: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-landing-button:hover {
+  background-color: #b30080;
+}
