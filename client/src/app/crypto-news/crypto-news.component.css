@@ -43,11 +43,21 @@
 }
 
 .read-more {
+  display: block;
   font-size: 1rem;
   color: #00ff00;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .read-more:hover {
+  color: #00cc00;
   text-decoration: underline;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
