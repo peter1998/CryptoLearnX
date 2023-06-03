@@ -1,4 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+// crypto-news.service.ts
+
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/enviroments/environment';
@@ -7,15 +9,14 @@ import { environment } from 'src/enviroments/environment';
   providedIn: 'root',
 })
 export class CryptoNewsService {
-  private url = 'https://crypto-news16.p.rapidapi.com/news/all';
-  private headers = new HttpHeaders({
-    'X-RapidAPI-Key': environment.RapidApiKey,
-    'X-RapidAPI-Host': environment.RapidApiHost,
-  });
+  private url =
+    'https://api.polygon.io/v2/reference/news?limit=10&order=descending&sort=published_utc&ticker=';
 
   constructor(private http: HttpClient) {}
 
-  getNews(): Observable<any> {
-    return this.http.get(this.url, { headers: this.headers });
+  getNews(ticker: string): Observable<any> {
+    return this.http.get(
+      this.url + ticker + '&apiKey=' + environment.PolygonApiKey
+    );
   }
 }

@@ -1,3 +1,5 @@
+// crypto-news.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { CryptoNewsService } from '../crypto-news.service';
 
@@ -14,13 +16,25 @@ export class CryptoNewsComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.cryptoNewsService.getNews().subscribe({
+    this.cryptoNewsService.getNews('BTC').subscribe({
       next: (data) => {
-        console.log('News data:', data); // log the data object
-        if (data) {
-          // Flatten the news articles from all sources into one array
-          this.news = Object.values(data).flat();
-        }
+        this.news.push(...data.results);
+      },
+      error: (error) => {
+        console.error('Error fetching news', error);
+      },
+    });
+    this.cryptoNewsService.getNews('ETH').subscribe({
+      next: (data) => {
+        this.news.push(...data.results);
+      },
+      error: (error) => {
+        console.error('Error fetching news', error);
+      },
+    });
+    this.cryptoNewsService.getNews('BNB').subscribe({
+      next: (data) => {
+        this.news.push(...data.results);
         this.loading = false;
       },
       error: (error) => {
