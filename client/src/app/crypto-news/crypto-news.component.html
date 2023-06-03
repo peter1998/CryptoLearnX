@@ -8,13 +8,6 @@
   <div *ngFor="let article of news" class="news-article">
     <div class="news-header">
       <h2 class="news-title">{{ article.title }}</h2>
-      <a
-        [href]="article.url"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="read-more mat-button"
-        >Read more</a
-      >
     </div>
     <img
       *ngIf="article.image"
@@ -23,6 +16,13 @@
       class="news-image"
     />
     <p class="news-description">{{ article.description }}</p>
+    <a
+      [href]="article.url"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="read-more mat-button"
+      >Read more</a
+    >
   </div>
 </div>
 
