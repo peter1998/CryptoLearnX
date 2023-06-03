@@ -1,35 +1,30 @@
+<!-- homepage.component.html -->
+
 <div class="homepage-sections">
-  <!-- homepage.component.html -->
-
-  <div class="homepage-sections">
-    <div
-      class="homepage-section"
-      (click)="navigateTo('/cryptocurrency-landing')"
-    >
-      <img src="/assets/bitcoin.jpg" alt="Cryptocurrency" />
-      <h2>Cryptocurrency</h2>
-      <p>
-        Explore the world of cryptocurrencies, view real-time price data, and
-        add your favorites to your watchlist.
-      </p>
-    </div>
-    <!-- other sections... -->
-  </div>
-
-  <div class="homepage-section" (click)="navigateTo('/iot')">
-    <img src="/assets/iot.jpg" alt="IoT" />
-    <h2>IoT</h2>
+  <div class="homepage-section" (click)="navigateTo('/cryptocurrency-landing')">
+    <img src="/assets/bitcoin.jpg" alt="Cryptocurrency" />
+    <h2>Cryptocurrency</h2>
     <p>
-      Learn about the Internet of Things, discover the latest IoT devices, and
-      understand how they're transforming our world.
+      Explore the world of cryptocurrencies, view real-time price data, and add
+      your favorites to your watchlist.
     </p>
   </div>
-  <div class="homepage-section" (click)="navigateTo('/cybersecurity')">
-    <img src="/assets/cyber-security.jpg" alt="Cybersecurity" />
-    <h2>Cybersecurity</h2>
-    <p>
-      Stay informed about the latest cybersecurity threats, learn how to protect
-      yourself online, and explore careers in cybersecurity.
-    </p>
-  </div>
+  <!-- other sections... -->
+</div>
+
+<div class="homepage-section" (click)="navigateTo('/iot')">
+  <img src="/assets/iot.jpg" alt="IoT" />
+  <h2>IoT</h2>
+  <p>
+    Learn about the Internet of Things, discover the latest IoT devices, and
+    understand how they're transforming our world.
+  </p>
+</div>
+<div class="homepage-section" (click)="navigateTo('/cybersecurity')">
+  <img src="/assets/cyber-security.jpg" alt="Cybersecurity" />
+  <h2>Cybersecurity</h2>
+  <p>
+    Stay informed about the latest cybersecurity threats, learn how to protect
+    yourself online, and explore careers in cybersecurity.
+  </p>
 </div>
