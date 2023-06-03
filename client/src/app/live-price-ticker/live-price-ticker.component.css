@@ -17,7 +17,6 @@
 .live-price-ticker-horizontal {
   display: flex;
   flex-direction: column;
-  animation: tickerScroll 444s linear infinite;
 }
 
 @keyframes tickerScroll {
@@ -25,7 +24,9 @@
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateY(
+      calc(-100% + 200px)
+    ); /* Adjust this value based on the height of your container */
   }
 }
 
