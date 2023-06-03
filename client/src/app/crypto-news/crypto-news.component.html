@@ -5,17 +5,11 @@
 </div>
 
 <div *ngIf="!loading && news.length > 0" class="crypto-news">
-  <mat-card *ngFor="let article of news" class="news-article">
-    <mat-card-header>
-      <mat-card-title>{{ article.title }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{ article.description }}</p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button color="accent">
-        <a [href]="article.url" target="_blank">Read more</a>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  <div *ngFor="let article of news" class="news-article">
+    <div class="news-header">
+      <h2 class="news-title">{{ article.title }}</h2>
+      <a [href]="article.url" target="_blank" class="read-more">Read more</a>
+    </div>
+    <p class="news-description">{{ article.description }}</p>
+  </div>
 </div>
