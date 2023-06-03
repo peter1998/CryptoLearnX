@@ -61,3 +61,20 @@
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
+.back-to-landing-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  background-color: #ff7700;
+  color: #fff;
+  border: none;
+  border-radius: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-landing-button:hover {
+  background-color: #b30080;
+}
