@@ -1,16 +1,27 @@
-<div class="calculator">
-  <input [(ngModel)]="amount" type="number" min="0" step="0.01" />
-  <select [(ngModel)]="crypto1">
-    <option *ngFor="let crypto of cryptos" [value]="crypto">
-      {{ crypto.name }}
-    </option>
-  </select>
-  <span>=</span>
-  <span>{{ result }}</span>
-  <select [(ngModel)]="crypto2">
-    <option *ngFor="let crypto of cryptos" [value]="crypto">
-      {{ crypto.name }}
-    </option>
-  </select>
+<div class="crypto-calculator">
+  <h2>Cryptocurrency Calculator</h2>
+  <div class="input-group">
+    <input
+      [(ngModel)]="amount"
+      type="number"
+      min="0"
+      step="0.01"
+      placeholder="Enter amount"
+    />
+    <select [(ngModel)]="crypto1">
+      <option *ngFor="let crypto of cryptos" [value]="crypto">
+        {{ crypto.name }}
+      </option>
+    </select>
+  </div>
+  <div class="result-group">
+    <span>=</span>
+    <span>{{ result }}</span>
+    <select [(ngModel)]="crypto2">
+      <option *ngFor="let crypto of cryptos" [value]="crypto">
+        {{ crypto.name }}
+      </option>
+    </select>
+  </div>
   <button (click)="calculate()">Calculate</button>
 </div>
