@@ -3,7 +3,6 @@ import {
   CryptoCurrencyService,
   CryptoCurrency,
 } from '../crypto-currency.service';
-import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-crypto-calculator',
@@ -12,38 +11,27 @@ import { tap } from 'rxjs/operators';
 })
 export class CryptoCalculatorComponent implements OnInit {
   cryptos: CryptoCurrency[] = [];
-  crypto1: CryptoCurrency | null = null;
-  crypto2: CryptoCurrency | null = null;
+  crypto1Index: number = 0;
+  crypto2Index: number = 1;
   amount = 1;
   result: number = 0;
 
   constructor(private cryptoCurrencyService: CryptoCurrencyService) {}
 
   ngOnInit(): void {
-    this.cryptoCurrencyService
-      .getCryptocurrencies()
-      .pipe(
-        tap((cryptos) => {
-          this.cryptos = cryptos;
-          this.crypto1 = this.cryptos[0];
-          this.crypto2 = this.cryptos[1];
-          console.log('crypto1:', this.crypto1);
-          console.log('crypto2:', this.crypto2);
-        })
-      )
-      .subscribe();
+    this.cryptoCurrencyService.getCryptocurrencies().subscribe((cryptos) => {
+      this.cryptos = cryptos;
+    });
   }
 
   calculate(): void {
-    console.log('calculate method triggered');
-    if (this.crypto1 && this.crypto2) {
-      const crypto1Price = this.crypto1.current_price;
-      const crypto2Price = this.crypto2.current_price;
-      console.log('crypto1Price:', crypto1Price);
-      console.log('crypto2Price:', crypto2Price);
+    const crypto1 = this.cryptos[this.crypto1Index];
+    const crypto2 = this.cryptos[this.crypto2Index];
+    if (crypto1 && crypto2) {
+      const crypto1Price = Number(crypto1.current_price);
+      const crypto2Price = Number(crypto2.current_price);
       if (!isNaN(crypto1Price) && !isNaN(crypto2Price)) {
         this.result = (this.amount * crypto1Price) / crypto2Price;
-        console.log('result:', this.result);
       }
     }
   }

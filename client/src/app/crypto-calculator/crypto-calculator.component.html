@@ -8,8 +8,8 @@
       step="0.01"
       placeholder="Enter amount"
     />
-    <select [(ngModel)]="crypto1" (change)="calculate()">
-      <option *ngFor="let crypto of cryptos" [value]="crypto">
+    <select [(ngModel)]="crypto1Index" (change)="calculate()">
+      <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
         {{ crypto.name }}
       </option>
     </select>
@@ -17,8 +17,8 @@
   <div class="result-group">
     <span>=</span>
     <span>{{ result }}</span>
-    <select [(ngModel)]="crypto2" (change)="calculate()">
-      <option *ngFor="let crypto of cryptos" [value]="crypto">
+    <select [(ngModel)]="crypto2Index" (change)="calculate()">
+      <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
         {{ crypto.name }}
       </option>
     </select>
