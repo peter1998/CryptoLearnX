@@ -8,6 +8,7 @@
   border-radius: 10px;
   max-width: 400px;
   margin: 0 auto;
+  background-color: #f9f9f9;
 }
 
 .crypto-calculator h2 {
@@ -37,4 +38,19 @@
 
 .crypto-calculator button:hover {
   background-color: #0056b3;
+}
+
+.crypto-calculator .crypto-info {
+  margin-top: 20px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.crypto-calculator .crypto-info h3 {
+  margin-bottom: 10px;
+}
+
+.crypto-calculator .crypto-info p {
+  margin: 5px 0;
 }

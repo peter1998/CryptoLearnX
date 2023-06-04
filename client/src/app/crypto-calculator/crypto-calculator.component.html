@@ -24,4 +24,22 @@
     </select>
   </div>
   <button (click)="calculate()">Calculate</button>
+  <div
+    class="crypto-info"
+    *ngIf="cryptos[crypto1Index] && cryptos[crypto2Index]"
+  >
+    <h3>Additional Information</h3>
+    <p>
+      <strong>{{ cryptos[crypto1Index].name }}</strong>
+    </p>
+    <p>Current Price: {{ cryptos[crypto1Index].current_price }}</p>
+    <p>Market Cap: {{ cryptos[crypto1Index].market_cap }}</p>
+    <p>Total Volume: {{ cryptos[crypto1Index].total_volume }}</p>
+    <p>
+      <strong>{{ cryptos[crypto2Index].name }}</strong>
+    </p>
+    <p>Current Price: {{ cryptos[crypto2Index].current_price }}</p>
+    <p>Market Cap: {{ cryptos[crypto2Index].market_cap }}</p>
+    <p>Total Volume: {{ cryptos[crypto2Index].total_volume }}</p>
+  </div>
 </div>
