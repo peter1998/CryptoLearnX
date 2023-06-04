@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {
   CryptoCurrencyService,
   CryptoCurrency,
@@ -8,6 +8,7 @@ import {
   selector: 'app-crypto-calculator',
   templateUrl: './crypto-calculator.component.html',
   styleUrls: ['./crypto-calculator.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CryptoCalculatorComponent implements OnInit {
   cryptos: CryptoCurrency[] = [];
