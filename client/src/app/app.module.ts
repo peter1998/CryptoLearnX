@@ -23,6 +23,7 @@ import { DiscussionForumComponent } from './discussion-forum/discussion-forum.co
 import { NgChartsModule } from 'ng2-charts';
 import { CryptoInteractiveChartComponent } from './crypto-interactive-chart/crypto-interactive-chart.component';
 import { FormsModule } from '@angular/forms';
+import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
     LivePriceTickerComponent,
     DiscussionForumComponent,
     CryptoInteractiveChartComponent,
+    CryptoCalculatorComponent,
   ],
   imports: [
     BrowserModule,
