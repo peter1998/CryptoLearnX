@@ -27,6 +27,8 @@ export class CryptoCalculatorComponent implements OnInit {
           this.cryptos = cryptos;
           this.crypto1 = this.cryptos[0];
           this.crypto2 = this.cryptos[1];
+          console.log('crypto1:', this.crypto1);
+          console.log('crypto2:', this.crypto2);
         })
       )
       .subscribe();
@@ -35,8 +37,8 @@ export class CryptoCalculatorComponent implements OnInit {
   calculate(): void {
     console.log('calculate method triggered');
     if (this.crypto1 && this.crypto2) {
-      const crypto1Price = Number(this.crypto1.current_price);
-      const crypto2Price = Number(this.crypto2.current_price);
+      const crypto1Price = this.crypto1.current_price;
+      const crypto2Price = this.crypto2.current_price;
       console.log('crypto1Price:', crypto1Price);
       console.log('crypto2Price:', crypto2Price);
       if (!isNaN(crypto1Price) && !isNaN(crypto2Price)) {
