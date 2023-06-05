@@ -11,6 +11,7 @@ import { CyberSecurityComponent } from './cyber-security/cyber-security.componen
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
 import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
+import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'watchlist', component: CartPageComponent },
   { path: 'crypto-news', component: CryptoNewsComponent },
   { path: 'crypto-calculator', component: CryptoCalculatorComponent },
+  { path: 'crypto-alerts', component: CryptoAlertsComponent },
+
   // other routes...
 ];
 
