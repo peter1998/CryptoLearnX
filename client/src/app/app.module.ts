@@ -24,6 +24,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { CryptoInteractiveChartComponent } from './crypto-interactive-chart/crypto-interactive-chart.component';
 import { FormsModule } from '@angular/forms';
 import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
+import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
     DiscussionForumComponent,
     CryptoInteractiveChartComponent,
     CryptoCalculatorComponent,
+    CryptoAlertsComponent,
   ],
   imports: [
     BrowserModule,
