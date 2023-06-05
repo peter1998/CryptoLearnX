@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {
-  CryptoCurrencyService,
   CryptoCurrency,
-} from '../crypto-currency.service';
+  CryptoCurrencyService,
+} from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-crypto-calculator',
@@ -20,9 +20,9 @@ export class CryptoCalculatorComponent implements OnInit {
   constructor(private cryptoCurrencyService: CryptoCurrencyService) {}
 
   ngOnInit(): void {
-    this.cryptoCurrencyService.getCryptocurrencies().subscribe((cryptos) => {
-      this.cryptos = cryptos;
-    });
+    //this.cryptoCurrencyService.getCryptocurrencies().subscribe((cryptos) => {
+    //  this.cryptos = cryptos;
+    //});
   }
 
   calculate(): void {

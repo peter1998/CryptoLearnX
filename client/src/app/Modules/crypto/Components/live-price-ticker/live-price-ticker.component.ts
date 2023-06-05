@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CryptoCurrencyService } from '../crypto-currency.service';
+import { CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-live-price-ticker',

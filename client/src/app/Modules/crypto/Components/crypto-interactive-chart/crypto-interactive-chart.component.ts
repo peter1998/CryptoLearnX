@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  CryptoCurrencyService,
-  CryptoCurrency,
-} from '../crypto-currency.service';
 import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import {
+  CryptoCurrency,
+  CryptoCurrencyService,
+} from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-crypto-interactive-chart',

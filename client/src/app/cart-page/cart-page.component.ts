@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CryptoCurrency } from '../crypto-currency.service';
-import { WatchlistService } from '../watchlist.service';
+import { CryptoCurrency } from '../Services/crypto-currency.service';
+import { WatchlistService } from '../Services/watchlist.service';
 
 @Component({
   selector: 'app-cart-page',

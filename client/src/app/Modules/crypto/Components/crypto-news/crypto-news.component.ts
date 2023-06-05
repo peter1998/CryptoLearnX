@@ -1,8 +1,8 @@
 // crypto-news.component.ts
 
 import { Component, OnInit } from '@angular/core';
-import { CryptoNewsService } from '../crypto-news.service';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CryptoNewsService } from 'src/app/Services/crypto-news.service';
 
 @Component({
   selector: 'app-crypto-news',

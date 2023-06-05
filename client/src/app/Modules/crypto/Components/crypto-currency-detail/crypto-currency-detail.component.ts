@@ -2,8 +2,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CryptoCurrencyService } from '../crypto-currency.service';
-import { WatchlistService } from '../watchlist.service';
+import { CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
+import { WatchlistService } from 'src/app/Services/watchlist.service';
 
 @Component({
   selector: 'app-crypto-currency-detail',

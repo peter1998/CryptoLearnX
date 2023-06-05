@@ -1,10 +1,8 @@
-// crypto-currency-list.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import {
-  CryptoCurrencyService,
   CryptoCurrency,
-} from '../crypto-currency.service';
+  CryptoCurrencyService,
+} from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-crypto-currency-list',
