@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CryptoCurrencyService } from '../crypto-currency.service';
+import {
+  CryptoCurrencyService,
+  CryptoCurrency,
+} from '../crypto-currency.service';
 
 @Component({
   selector: 'app-crypto-alerts',
@@ -10,6 +13,7 @@ import { CryptoCurrencyService } from '../crypto-currency.service';
 export class CryptoAlertsComponent implements OnInit {
   alertForm: FormGroup;
   alerts: { crypto: string; price: number }[] = [];
+  cryptos: CryptoCurrency[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,10 +26,11 @@ export class CryptoAlertsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.alertForm = this.formBuilder.group({
-      crypto: ['', Validators.required],
-      price: ['', [Validators.required, Validators.min(0)]],
-    });
+    this.cryptoService
+      .getCryptocurrencies()
+      .subscribe((data: CryptoCurrency[]) => {
+        this.cryptos = data;
+      });
   }
 
   onSubmit() {
@@ -36,14 +41,13 @@ export class CryptoAlertsComponent implements OnInit {
     }
   }
 
-  checkPrice(alert: { crypto: string; price: number }) {
+  checkPrice(priceAlert: { crypto: string; price: number }) {
     this.cryptoService
-      .getCryptoCurrency(alert.crypto)
+      .getCryptoCurrency(priceAlert.crypto)
       .subscribe((data: any) => {
-        if (data.market_data.current_price.usd >= alert.price) {
-          // TODO: Notify the user
-          console.log(
-            `Price alert for ${alert.crypto}: current price is ${data.market_data.current_price.usd}`
+        if (data.market_data.current_price.usd >= priceAlert.price) {
+          window.alert(
+            `Price alert for ${priceAlert.crypto}: current price is ${data.market_data.current_price.usd}`
           );
         }
       });

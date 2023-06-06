@@ -1,7 +1,11 @@
 <form [formGroup]="alertForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="crypto">Cryptocurrency:</label>
-    <input id="crypto" type="text" formControlName="crypto" />
+    <select id="crypto" formControlName="crypto">
+      <option *ngFor="let crypto of cryptos" [value]="crypto.id">
+        {{ crypto.name }}
+      </option>
+    </select>
   </div>
   <div>
     <label for="price">Price:</label>
