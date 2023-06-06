@@ -9,7 +9,7 @@
   <p>24h Change: {{ alert.crypto.price_change_percentage_24h }}%</p>
   <app-alert
     [message]="'Alert set at price ' + alert.price"
-    (dismiss)="dismissAlert(i)"
+    (dismiss)="dismissAlertCard(i)"
   ></app-alert>
 </div>
 
@@ -29,6 +29,7 @@
   <button type="submit">Set Alert</button>
 </form>
 
-<div class="alerts" *ngFor="let alert of alerts">
-  <p>Alert set for {{ alert.crypto }} at price {{ alert.price }}</p>
+<div class="alerts" *ngFor="let alert of alertMessages; index as i">
+  <p>{{ alert.message }}</p>
+  <button (click)="dismissAlert(i)">Dismiss</button>
 </div>

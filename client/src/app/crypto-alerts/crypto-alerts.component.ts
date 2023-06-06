@@ -72,4 +72,8 @@ export class CryptoAlertsComponent implements OnInit {
   dismissAlert(index: number) {
     this.alertMessages.splice(index, 1);
   }
+
+  dismissAlertCard(index: number) {
+    this.alerts.splice(index, 1);
+  }
 }
