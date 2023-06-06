@@ -1,3 +1,14 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -48,6 +59,7 @@ button:hover {
 }
 
 .alert-container {
+  margin-top: 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -120,4 +132,21 @@ p {
 
 .alert-actions .btn:hover {
   background-color: #c82333;
+}
+
+.back-to-landing-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  background-color: #ff7700;
+  color: #fff;
+  border: none;
+  border-radius: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-landing-button:hover {
+  background-color: #b30080;
 }

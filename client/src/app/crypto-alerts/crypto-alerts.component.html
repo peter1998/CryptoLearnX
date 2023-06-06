@@ -28,20 +28,26 @@
     <label for="price">Price:</label>
     <input id="price" type="number" formControlName="price" />
   </div>
-  <button type="submit">Set Alert</button>
+  <button type="submit" matTooltip="Set a new price alert">Set Alert</button>
 </form>
 
-<div class="alert-card" *ngFor="let alert of alertMessages; index as i">
-  <div class="alert-content">
-    <p>{{ alert.message }}</p>
-  </div>
-  <div class="alert-actions">
-    <button
-      class="btn btn-sm btn-outline-secondary"
-      (click)="dismissAlert(i)"
-      tooltip="Dismiss this alert"
-    >
-      Dismiss
-    </button>
+<div class="alert-container">
+  <div class="alert-card" *ngFor="let alert of alertMessages; index as i">
+    <div class="alert-content">
+      <p>{{ alert.message }}</p>
+    </div>
+    <div class="alert-actions">
+      <button
+        class="btn btn-sm btn-outline-secondary"
+        (click)="dismissAlert(i)"
+        matTooltip="Dismiss this information for the alert card"
+      >
+        Info
+      </button>
+    </div>
   </div>
 </div>
+
+<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+  Back to Landing Page
+</button>
