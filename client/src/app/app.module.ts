@@ -25,6 +25,7 @@ import { CryptoInteractiveChartComponent } from './crypto-interactive-chart/cryp
 import { FormsModule } from '@angular/forms';
 import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
 import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -62,6 +63,7 @@ const routes: Routes = [
     MatProgressSpinnerModule,
     NgChartsModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

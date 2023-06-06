@@ -1,1 +1,15 @@
-<p>crypto-alerts works!</p>
+<form [formGroup]="alertForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="crypto">Cryptocurrency:</label>
+    <input id="crypto" type="text" formControlName="crypto" />
+  </div>
+  <div>
+    <label for="price">Price:</label>
+    <input id="price" type="number" formControlName="price" />
+  </div>
+  <button type="submit">Set Alert</button>
+</form>
+
+<div class="alerts" *ngFor="let alert of alerts">
+  <p>Alert set for {{ alert.crypto }} at price {{ alert.price }}</p>
+</div>
