@@ -26,6 +26,7 @@ import { FormsModule } from '@angular/forms';
 import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
 import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './alert/alert.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -51,6 +52,7 @@ const routes: Routes = [
     CryptoInteractiveChartComponent,
     CryptoCalculatorComponent,
     CryptoAlertsComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,

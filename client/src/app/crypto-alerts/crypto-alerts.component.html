@@ -1,3 +1,18 @@
+<div class="alert-card" *ngFor="let alert of alerts; index as i">
+  <img
+    [src]="alert.crypto.image"
+    alt="{{ alert.crypto.name }}"
+    class="crypto-logo"
+  />
+  <h2>{{ alert.crypto.name }}</h2>
+  <p>Current Price: {{ alert.crypto.current_price }}</p>
+  <p>24h Change: {{ alert.crypto.price_change_percentage_24h }}%</p>
+  <app-alert
+    [message]="'Alert set at price ' + alert.price"
+    (dismiss)="dismissAlert(i)"
+  ></app-alert>
+</div>
+
 <form [formGroup]="alertForm" (ngSubmit)="onSubmit()">
   <div>
     <label for="crypto">Cryptocurrency:</label>

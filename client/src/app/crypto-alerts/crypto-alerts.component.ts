@@ -12,8 +12,9 @@ import {
 })
 export class CryptoAlertsComponent implements OnInit {
   alertForm: FormGroup;
-  alerts: { crypto: string; price: number }[] = [];
+  alerts: { crypto: CryptoCurrency; price: number }[] = [];
   cryptos: CryptoCurrency[] = [];
+  alertMessages: { message: string }[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,9 +36,20 @@ export class CryptoAlertsComponent implements OnInit {
 
   onSubmit() {
     if (this.alertForm.valid) {
-      this.alerts.push(this.alertForm.value);
-      this.checkPrice(this.alertForm.value);
-      this.alertForm.reset();
+      const alertCrypto = this.cryptos.find(
+        (crypto) => crypto.id === this.alertForm.value.crypto
+      );
+      if (alertCrypto) {
+        this.alerts.push({
+          crypto: alertCrypto,
+          price: this.alertForm.value.price,
+        });
+        this.checkPrice({
+          crypto: alertCrypto.id,
+          price: this.alertForm.value.price,
+        });
+        this.alertForm.reset();
+      }
     }
   }
 
@@ -46,10 +58,18 @@ export class CryptoAlertsComponent implements OnInit {
       .getCryptoCurrency(priceAlert.crypto)
       .subscribe((data: any) => {
         if (data.market_data.current_price.usd >= priceAlert.price) {
-          window.alert(
+          this.addAlert(
             `Price alert for ${priceAlert.crypto}: current price is ${data.market_data.current_price.usd}`
           );
         }
       });
+  }
+
+  addAlert(message: string) {
+    this.alertMessages.push({ message });
+  }
+
+  dismissAlert(index: number) {
+    this.alertMessages.splice(index, 1);
   }
 }

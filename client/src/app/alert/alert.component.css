@@ -1,0 +1,26 @@
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #2f3640;
+  border-radius: 4px;
+  background-color: #353b48;
+  color: #dcdde1;
+  transition: transform 0.3s ease-in-out;
+}
+
+.alert:hover {
+  transform: scale(1.02);
+}
+
+.alert button {
+  margin-left: 15px;
+  background: none;
+  border: none;
+  color: #dcdde1;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.alert button:hover {
+  color: #e84118;
+}

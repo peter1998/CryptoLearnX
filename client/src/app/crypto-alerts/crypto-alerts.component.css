@@ -51,3 +51,27 @@ button:hover {
 .alerts p:last-child {
   border-bottom: none;
 }
+
+.alert-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.crypto-logo {
+  width: 50px;
+  height: 50px;
+}
+
+h2 {
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0;
+}
