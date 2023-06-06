@@ -70,10 +70,17 @@ export class CryptoAlertsComponent implements OnInit {
   }
 
   dismissAlert(index: number) {
-    this.alertMessages.splice(index, 1);
+    const message = this.alertMessages[index].message;
+    this.alertMessages = this.alertMessages.filter(
+      (alert) => alert.message !== message
+    );
   }
 
   dismissAlertCard(index: number) {
+    const message = `'Alert set at price ' + ${this.alerts[index].price}`;
     this.alerts.splice(index, 1);
+    this.alertMessages = this.alertMessages.filter(
+      (alert) => alert.message !== message
+    );
   }
 }
