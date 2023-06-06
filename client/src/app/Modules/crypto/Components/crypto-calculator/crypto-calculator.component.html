@@ -1,13 +1,7 @@
 <div class="crypto-calculator">
   <h2>Cryptocurrency Calculator</h2>
   <div class="input-group">
-    <input
-      [(ngModel)]="amount"
-      type="number"
-      min="0"
-      step="0.01"
-      placeholder="Enter amount"
-    />
+    <input [(ngModel)]="amount" type="number" min="0" step="0.01" placeholder="Enter amount" />
     <select [(ngModel)]="crypto1Index" (change)="calculate()">
       <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
         {{ crypto.name }}
@@ -24,18 +18,10 @@
     </select>
   </div>
   <button (click)="calculate()">Calculate</button>
-  <div
-    class="crypto-info"
-    *ngIf="cryptos[crypto1Index] && cryptos[crypto2Index]"
-  >
+  <div class="crypto-info" *ngIf="cryptos[crypto1Index] && cryptos[crypto2Index]">
     <h3>Additional Information</h3>
     <p>
-      <img
-        [src]="cryptos[crypto1Index].image"
-        alt="{{ cryptos[crypto1Index].name }}"
-        width="50"
-        height="50"
-      />
+      <img [src]="cryptos[crypto1Index].image" alt="{{ cryptos[crypto1Index].name }}" width="50" height="50" />
 
       <strong>{{ cryptos[crypto1Index].name }}</strong>
     </p>
@@ -43,12 +29,7 @@
     <p>Market Cap: {{ cryptos[crypto1Index].market_cap }}</p>
     <p>Total Volume: {{ cryptos[crypto1Index].total_volume }}</p>
     <p>
-      <img
-        [src]="cryptos[crypto2Index].image"
-        alt="{{ cryptos[crypto2Index].name }}"
-        width="50"
-        height="50"
-      />
+      <img [src]="cryptos[crypto2Index].image" alt="{{ cryptos[crypto2Index].name }}" width="50" height="50" />
 
       <strong>{{ cryptos[crypto2Index].name }}</strong>
     </p>
@@ -58,6 +39,6 @@
   </div>
 </div>
 
-<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+<button class="back-to-landing-button" routerLink="/crypto">
   Back to Landing Page
 </button>

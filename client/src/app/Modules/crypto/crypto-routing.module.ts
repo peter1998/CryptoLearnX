@@ -9,9 +9,10 @@ import { CryptoNewsComponent } from './Components/crypto-news/crypto-news.compon
 const routes: Routes = [
   { path: '', component: CryptoCurrencyLandingComponent },
   { path: 'list', component: CryptoCurrencyListComponent },
-  { path: ':id', component: CryptoCurrencyDetailComponent },
   { path: 'news', component: CryptoNewsComponent },
   { path: 'calculator', component: CryptoCalculatorComponent },
+
+  { path: ':id', component: CryptoCurrencyDetailComponent },
 ];
 
 @NgModule({

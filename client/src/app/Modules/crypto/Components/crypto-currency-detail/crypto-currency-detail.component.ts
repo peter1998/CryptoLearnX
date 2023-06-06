@@ -1,7 +1,6 @@
-// crypto-currency-detail.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Routes } from 'src/app/Constants/Routes';
 import { CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
 import { WatchlistService } from 'src/app/Services/watchlist.service';
 
@@ -22,22 +21,21 @@ export class CryptoCurrencyDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
+    console.log(id);
     if (id !== null) {
-      this.cryptoCurrencyService.getCryptoCurrency(id).subscribe(
-        (data) => {
+      this.cryptoCurrencyService.getCryptoCurrency(id).subscribe({
+        next: (data: any) => {
           this.cryptoCurrency = data;
           this.cryptoCurrency.desc = data.description['en'].split('\n')[0];
           console.log(this.cryptoCurrency);
         },
-        (error) => {
+        error: (error: any) => {
           console.error('Error fetching cryptocurrency', error);
-        }
-      );
+        },
+      });
     }
   }
 
-  // crypto-currency-detail.component.ts
-  // crypto-currency-detail.component.ts
   addToWatchlist() {
     const watchlistItem = {
       id: this.cryptoCurrency.id,
@@ -49,13 +47,12 @@ export class CryptoCurrencyDetailComponent implements OnInit {
       price_change_percentage_24h:
         this.cryptoCurrency.market_data.price_change_percentage_24h,
       market_cap_rank: this.cryptoCurrency.market_cap_rank,
-      // add all other properties required by the CryptoCurrency interface
     };
     this.watchlistService.addToWatchlist(watchlistItem);
-    this.router.navigate(['/watchlist']);
+    this.router.navigate([Routes.Watchilist]);
   }
 
   goBack(): void {
-    this.router.navigate(['/cryptocurrency']);
+    this.router.navigate([Routes.Crypto.List]);
   }
 }
