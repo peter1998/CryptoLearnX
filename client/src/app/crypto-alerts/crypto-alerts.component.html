@@ -31,7 +31,17 @@
   <button type="submit">Set Alert</button>
 </form>
 
-<div class="alerts" *ngFor="let alert of alertMessages; index as i">
-  <p>{{ alert.message }}</p>
-  <button (click)="dismissAlert(i)">Dismiss</button>
+<div class="alert-card" *ngFor="let alert of alertMessages; index as i">
+  <div class="alert-content">
+    <p>{{ alert.message }}</p>
+  </div>
+  <div class="alert-actions">
+    <button
+      class="btn btn-sm btn-outline-secondary"
+      (click)="dismissAlert(i)"
+      tooltip="Dismiss this alert"
+    >
+      Dismiss
+    </button>
+  </div>
 </div>

@@ -47,26 +47,6 @@ button:hover {
   background-color: #43a047;
 }
 
-.alerts {
-  width: 300px;
-  margin: 20px auto;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.alerts p {
-  margin: 0;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
-  color: #424242;
-}
-
-.alerts p:last-child {
-  border-bottom: none;
-}
-
 .alert-container {
   display: flex;
   flex-wrap: wrap;
@@ -106,4 +86,38 @@ p {
   margin: 5px 0;
   color: #616161;
   font-size: 14px;
+}
+
+.alert-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.alert-content {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.alert-actions {
+  flex-shrink: 0;
+}
+
+.alert-actions .btn {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.alert-actions .btn:hover {
+  background-color: #c82333;
 }

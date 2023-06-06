@@ -27,6 +27,7 @@ import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator
 import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -66,6 +67,7 @@ const routes: Routes = [
     NgChartsModule,
     FormsModule,
     ReactiveFormsModule,
+    TooltipModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -59,7 +59,11 @@ export class CryptoAlertsComponent implements OnInit {
       .subscribe((data: any) => {
         if (data.market_data.current_price.usd >= priceAlert.price) {
           this.addAlert(
-            `Price alert for ${priceAlert.crypto}: current price is ${data.market_data.current_price.usd}`
+            `Price alert for ${priceAlert.crypto}: 
+            Current price is $${data.market_data.current_price.usd}.
+            The price changed by ${data.market_data.price_change_percentage_24h}% in the last 24 hours.
+            The highest price in the last 24 hours was $${data.market_data.high_24h.usd}.
+            The lowest price in the last 24 hours was $${data.market_data.low_24h.usd}.`
           );
         }
       });
