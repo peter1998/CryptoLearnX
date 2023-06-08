@@ -15,6 +15,7 @@ import {
 export class CryptoComparisonComponent implements OnInit {
   searchControl = new FormControl();
   filteredOptions: Observable<CryptoCurrency[]> = of([]);
+  selectedCryptocurrencies: CryptoCurrency[] = [];
 
   constructor(private cryptoService: CryptoCurrencyService) {}
 
@@ -23,6 +24,22 @@ export class CryptoComparisonComponent implements OnInit {
       startWith(''),
       switchMap((value) => this._filter(value))
     );
+
+    // Fetch the cryptocurrencies when the component is initialized
+    this.cryptoService
+      .getCryptocurrencies()
+      .subscribe((cryptos: CryptoCurrency[]) => {
+        this.selectedCryptocurrencies = cryptos;
+      });
+  }
+
+  optionSelected(event: any) {
+    const selectedCryptoId = event.option.value;
+    this.cryptoService
+      .getCryptoCurrency(selectedCryptoId)
+      .subscribe((crypto: CryptoCurrency) => {
+        this.selectedCryptocurrencies.push(crypto);
+      });
   }
 
   private _filter(value: string): Observable<CryptoCurrency[]> {

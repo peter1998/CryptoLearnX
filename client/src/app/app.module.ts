@@ -36,6 +36,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
+import { ComparisonTableComponent } from './comparison-table/comparison-table.component';
+import { MatTableModule } from '@angular/material/table';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -63,6 +65,7 @@ const routes: Routes = [
     CryptoAlertsComponent,
     AlertComponent,
     CryptoComparisonComponent,
+    ComparisonTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +85,7 @@ const routes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatOptionModule,
+    MatTableModule,
   ],
   providers: [CryptoCurrencyService, PriceMonitorService],
   bootstrap: [AppComponent],
