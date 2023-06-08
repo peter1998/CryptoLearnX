@@ -32,6 +32,10 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { CryptoCurrencyService } from './crypto-currency.service';
 import { PriceMonitorService } from './price-monitor.service';
 import { CryptoComparisonComponent } from './crypto-comparison/crypto-comparison.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -74,6 +78,10 @@ const routes: Routes = [
     ReactiveFormsModule,
     TooltipModule.forRoot(),
     MatTooltipModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatOptionModule,
   ],
   providers: [CryptoCurrencyService, PriceMonitorService],
   bootstrap: [AppComponent],
