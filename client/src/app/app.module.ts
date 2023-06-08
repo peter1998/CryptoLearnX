@@ -31,6 +31,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CryptoCurrencyService } from './crypto-currency.service';
 import { PriceMonitorService } from './price-monitor.service';
+import { CryptoComparisonComponent } from './crypto-comparison/crypto-comparison.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -57,6 +58,7 @@ const routes: Routes = [
     CryptoCalculatorComponent,
     CryptoAlertsComponent,
     AlertComponent,
+    CryptoComparisonComponent,
   ],
   imports: [
     BrowserModule,
