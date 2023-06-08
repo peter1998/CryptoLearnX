@@ -9,6 +9,35 @@ body {
   );
 }
 
+.loading-spinner {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 50px auto;
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #b30000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #b30000;
+  border-radius: 5px;
+}
+
 form {
   display: flex;
   flex-direction: column;

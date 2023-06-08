@@ -1,9 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import {
   CryptoCurrencyService,
   CryptoCurrency,
 } from '../crypto-currency.service';
+import { PriceMonitorService } from '../price-monitor.service';
 
 @Component({
   selector: 'app-crypto-alerts',
@@ -11,15 +13,19 @@ import {
   styleUrls: ['./crypto-alerts.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CryptoAlertsComponent implements OnInit {
+export class CryptoAlertsComponent implements OnInit, OnDestroy {
   alertForm: FormGroup;
   alerts: { crypto: CryptoCurrency; price: number }[] = [];
   cryptos: CryptoCurrency[] = [];
   alertMessages: { message: string }[] = [];
+  alertTriggeredSubscription: Subscription = new Subscription();
+  loading = false;
+  error: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
-    private cryptoService: CryptoCurrencyService
+    private cryptoService: CryptoCurrencyService,
+    private priceMonitorService: PriceMonitorService
   ) {
     this.alertForm = this.formBuilder.group({
       crypto: ['', Validators.required],
@@ -28,11 +34,28 @@ export class CryptoAlertsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cryptoService
-      .getCryptocurrencies()
-      .subscribe((data: CryptoCurrency[]) => {
+    this.loading = true;
+    this.cryptoService.getCryptocurrencies().subscribe(
+      (data: CryptoCurrency[]) => {
         this.cryptos = data;
+        this.loading = false;
+      },
+      (error) => {
+        this.error = 'Failed to load cryptocurrencies';
+        this.loading = false;
+      }
+    );
+
+    this.alertTriggeredSubscription =
+      this.priceMonitorService.alertTriggered.subscribe((message: string) => {
+        this.addAlert(message);
       });
+  }
+
+  ngOnDestroy() {
+    if (this.alertTriggeredSubscription) {
+      this.alertTriggeredSubscription.unsubscribe();
+    }
   }
 
   onSubmit() {
@@ -45,6 +68,12 @@ export class CryptoAlertsComponent implements OnInit {
           crypto: alertCrypto,
           price: this.alertForm.value.price,
         });
+        this.priceMonitorService.startMonitoring(
+          this.alerts.map((alert) => ({
+            crypto: alert.crypto.id,
+            price: alert.price,
+          }))
+        );
         this.checkPrice({
           crypto: alertCrypto.id,
           price: this.alertForm.value.price,
@@ -82,10 +111,13 @@ export class CryptoAlertsComponent implements OnInit {
   }
 
   dismissAlertCard(index: number) {
-    const message = `'Alert set at price ' + ${this.alerts[index].price}`;
     this.alerts.splice(index, 1);
-    this.alertMessages = this.alertMessages.filter(
-      (alert) => alert.message !== message
+    this.priceMonitorService.startMonitoring(
+      this.alerts.map((alert) => ({
+        crypto: alert.crypto.id,
+        price: alert.price,
+      }))
     );
+    // Update the alerts in the PriceMonitorService
   }
 }

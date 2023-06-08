@@ -1,3 +1,9 @@
+<div *ngIf="loading" class="loading-spinner">Loading...</div>
+
+<div *ngIf="error" class="error-message">
+  {{ error }}
+</div>
+
 <div class="alert-container">
   <div class="alert-card" *ngFor="let alert of alerts; index as i">
     <img

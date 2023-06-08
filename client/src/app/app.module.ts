@@ -29,6 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { CryptoCurrencyService } from './crypto-currency.service';
+import { PriceMonitorService } from './price-monitor.service';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -71,7 +73,7 @@ const routes: Routes = [
     TooltipModule.forRoot(),
     MatTooltipModule,
   ],
-  providers: [],
+  providers: [CryptoCurrencyService, PriceMonitorService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
