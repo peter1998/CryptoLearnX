@@ -15,6 +15,11 @@ export class ComparisonTableComponent implements OnInit {
     'market_cap',
     'total_volume',
     'price_change_percentage_24h',
+    'high_24h',
+    'low_24h',
+    'price_change_24h',
+    'circulating_supply',
+    'total_supply',
   ];
 
   constructor() {}

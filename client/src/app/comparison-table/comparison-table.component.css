@@ -14,3 +14,8 @@ th {
   background-color: #4caf50;
   color: black;
 }
+
+.table-width {
+  width: 80%;
+  margin: auto; /* This will center the table */
+}
