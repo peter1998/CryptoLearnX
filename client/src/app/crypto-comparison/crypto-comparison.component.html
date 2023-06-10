@@ -21,7 +21,10 @@
     </mat-autocomplete>
   </mat-form-field>
 
+  <!-- CryptoComparisonComponent template -->
   <app-comparison-table
     [cryptocurrencies]="selectedCryptocurrencies"
+    (removeCrypto)="removeCrypto($event)"
   ></app-comparison-table>
+  <button mat-button (click)="fetchAllCryptos()">Show All</button>
 </div>

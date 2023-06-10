@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CryptoCurrency } from '../crypto-currency.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { CryptoCurrency } from '../crypto-currency.service';
 })
 export class ComparisonTableComponent implements OnInit {
   @Input() cryptocurrencies: CryptoCurrency[] = [];
+  @Output() removeCrypto = new EventEmitter<CryptoCurrency>();
 
   displayedColumns: string[] = [
     'name',
@@ -20,6 +21,7 @@ export class ComparisonTableComponent implements OnInit {
     'price_change_24h',
     'circulating_supply',
     'total_supply',
+    'remove',
   ];
 
   constructor() {}

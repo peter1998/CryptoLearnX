@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
@@ -16,6 +16,8 @@ export class CryptoComparisonComponent implements OnInit {
   searchControl = new FormControl();
   filteredOptions: Observable<CryptoCurrency[]> = of([]);
   selectedCryptocurrencies: CryptoCurrency[] = [];
+
+  @Output() remove = new EventEmitter<CryptoCurrency>();
 
   constructor(private cryptoService: CryptoCurrencyService) {}
 
@@ -39,6 +41,20 @@ export class CryptoComparisonComponent implements OnInit {
       .getCryptoCurrency(selectedCryptoId)
       .subscribe((crypto: CryptoCurrency) => {
         this.selectedCryptocurrencies.push(crypto);
+      });
+  }
+
+  removeCrypto(crypto: CryptoCurrency) {
+    this.selectedCryptocurrencies = this.selectedCryptocurrencies.filter(
+      (c) => c !== crypto
+    );
+  }
+
+  fetchAllCryptos() {
+    this.cryptoService
+      .getCryptocurrencies()
+      .subscribe((cryptos: CryptoCurrency[]) => {
+        this.selectedCryptocurrencies = cryptos;
       });
   }
 
