@@ -84,6 +84,23 @@ th {
   color: #4caf50;
 }
 
+.custom-button-info {
+  background-color: #af984c;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.custom-button-info:hover {
+  background-color: white;
+  color: #4c4faf;
+}
+
 .back-to-landing-button {
   position: fixed;
   right: 20px;

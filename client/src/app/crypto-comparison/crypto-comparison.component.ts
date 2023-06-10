@@ -51,7 +51,6 @@ export class CryptoComparisonComponent implements OnInit {
       ];
     }
   }
-
   fetchAllCryptos() {
     this.cryptoService
       .getCryptocurrencies()

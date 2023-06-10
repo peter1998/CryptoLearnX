@@ -38,6 +38,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
 import { ComparisonTableComponent } from './comparison-table/comparison-table.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -86,6 +87,7 @@ const routes: Routes = [
     MatInputModule,
     MatOptionModule,
     MatTableModule,
+    MatSortModule,
   ],
   providers: [CryptoCurrencyService, PriceMonitorService],
   bootstrap: [AppComponent],

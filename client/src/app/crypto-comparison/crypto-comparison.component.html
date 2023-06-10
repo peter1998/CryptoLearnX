@@ -20,6 +20,13 @@
         >
           Add
         </button>
+        <button
+          class="custom-button-info"
+          (click)="$event.stopPropagation()"
+          [routerLink]="['/cryptocurrency', option.id]"
+        >
+          Info
+        </button>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
