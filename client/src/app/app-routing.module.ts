@@ -13,6 +13,7 @@ import { CryptoNewsComponent } from './crypto-news/crypto-news.component';
 import { CryptoCalculatorComponent } from './crypto-calculator/crypto-calculator.component';
 import { CryptoAlertsComponent } from './crypto-alerts/crypto-alerts.component';
 import { CryptoComparisonComponent } from './crypto-comparison/crypto-comparison.component';
+import { CryptoCurrencyLearningResourcesComponent } from './crypto-currency-learning-resources/crypto-currency-learning-resources.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -26,6 +27,10 @@ const routes: Routes = [
   { path: 'crypto-calculator', component: CryptoCalculatorComponent },
   { path: 'crypto-alerts', component: CryptoAlertsComponent },
   { path: 'crypto-comparison', component: CryptoComparisonComponent },
+  {
+    path: 'crypto-currency-learning-resources',
+    component: CryptoCurrencyLearningResourcesComponent,
+  },
   // other routes...
 ];
 

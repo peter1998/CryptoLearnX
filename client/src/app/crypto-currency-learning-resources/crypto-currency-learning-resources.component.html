@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="search-bar">
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Search" [(ngModel)]="searchTerm" />
+    </mat-form-field>
+  </div>
+  <div class="filters">
+    <mat-form-field>
+      <mat-label>Resource Type</mat-label>
+      <mat-select [(value)]="selectedResourceType">
+        <mat-option *ngFor="let type of resourceTypes" [value]="type">{{
+          type
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="resources-list">
+    <div *ngFor="let resource of learningResources">
+      <!-- Display the resource details here -->
+    </div>
+  </div>
+  <div class="pagination">
+    <!-- Pagination goes here -->
+  </div>
+</div>

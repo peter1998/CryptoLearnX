@@ -39,6 +39,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { ComparisonTableComponent } from './comparison-table/comparison-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { CryptoCurrencyLearningResourcesComponent } from './crypto-currency-learning-resources/crypto-currency-learning-resources.component';
+import { MatSelectModule } from '@angular/material/select';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -67,6 +69,7 @@ const routes: Routes = [
     AlertComponent,
     CryptoComparisonComponent,
     ComparisonTableComponent,
+    CryptoCurrencyLearningResourcesComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +91,7 @@ const routes: Routes = [
     MatOptionModule,
     MatTableModule,
     MatSortModule,
+    MatSelectModule,
   ],
   providers: [CryptoCurrencyService, PriceMonitorService],
   bootstrap: [AppComponent],
