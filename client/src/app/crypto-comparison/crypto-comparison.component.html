@@ -8,15 +8,18 @@
       [formControl]="searchControl"
       [matAutocomplete]="auto"
     />
-    <mat-autocomplete
-      #auto="matAutocomplete"
-      (optionSelected)="optionSelected($event)"
-    >
+    <mat-autocomplete #auto="matAutocomplete">
       <mat-option
         *ngFor="let option of filteredOptions | async"
         [value]="option.id"
       >
         {{ option.name }}
+        <button
+          mat-button
+          (click)="$event.stopPropagation(); addCrypto(option)"
+        >
+          Add
+        </button>
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
@@ -28,3 +31,7 @@
   ></app-comparison-table>
   <button mat-button (click)="fetchAllCryptos()">Show All</button>
 </div>
+
+<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+  Back to Landing Page
+</button>

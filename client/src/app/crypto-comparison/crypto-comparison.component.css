@@ -1,3 +1,14 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    rgba(7, 27, 82, 1) 0%,
+    rgba(0, 128, 128, 1) 100%
+  );
+}
+
 .full-width {
   width: 100%;
 }
@@ -54,4 +65,38 @@ th {
 
 .full-width-table {
   width: 100%;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: white;
+  color: #4caf50;
+}
+
+.back-to-landing-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  background-color: #ff7700;
+  color: #fff;
+  border: none;
+  border-radius: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-landing-button:hover {
+  background-color: #b30080;
 }

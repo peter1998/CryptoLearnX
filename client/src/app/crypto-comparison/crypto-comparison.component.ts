@@ -35,19 +35,19 @@ export class CryptoComparisonComponent implements OnInit {
       });
   }
 
-  optionSelected(event: any) {
-    const selectedCryptoId = event.option.value;
-    this.cryptoService
-      .getCryptoCurrency(selectedCryptoId)
-      .subscribe((crypto: CryptoCurrency) => {
-        this.selectedCryptocurrencies.push(crypto);
-      });
-  }
-
   removeCrypto(crypto: CryptoCurrency) {
     this.selectedCryptocurrencies = this.selectedCryptocurrencies.filter(
       (c) => c !== crypto
     );
+  }
+
+  addCrypto(crypto: CryptoCurrency) {
+    if (!this.selectedCryptocurrencies.some((c) => c.id === crypto.id)) {
+      this.selectedCryptocurrencies = [
+        ...this.selectedCryptocurrencies,
+        crypto,
+      ];
+    }
   }
 
   fetchAllCryptos() {
