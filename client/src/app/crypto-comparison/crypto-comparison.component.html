@@ -15,7 +15,7 @@
       >
         {{ option.name }}
         <button
-          mat-button
+          class="custom-button"
           (click)="$event.stopPropagation(); addCrypto(option)"
         >
           Add
@@ -29,7 +29,7 @@
     [cryptocurrencies]="selectedCryptocurrencies"
     (removeCrypto)="removeCrypto($event)"
   ></app-comparison-table>
-  <button mat-button (click)="fetchAllCryptos()">Show All</button>
+  <button class="custom-button" (click)="fetchAllCryptos()">Show All</button>
 </div>
 
 <button class="back-to-landing-button" routerLink="/cryptocurrency-landing">

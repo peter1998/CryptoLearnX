@@ -6,11 +6,13 @@ import {
   CryptoCurrency,
   CryptoCurrencyService,
 } from '../crypto-currency.service';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-crypto-comparison',
   templateUrl: './crypto-comparison.component.html',
   styleUrls: ['./crypto-comparison.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CryptoComparisonComponent implements OnInit {
   searchControl = new FormControl();

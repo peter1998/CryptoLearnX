@@ -67,7 +67,7 @@ th {
   width: 100%;
 }
 
-button {
+.custom-button {
   background-color: #4caf50;
   color: white;
   border: none;
@@ -79,7 +79,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.custom-button:hover {
   background-color: white;
   color: #4caf50;
 }
