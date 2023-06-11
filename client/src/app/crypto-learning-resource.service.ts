@@ -131,6 +131,62 @@ export class LearningResourceService {
       content:
         'This course explores the advanced applications of blockchain technology beyond Bitcoin and cryptocurrencies.',
     },
+    {
+      id: 18,
+      title: 'Cryptocurrency Crisis and Future Predictions',
+      type: 'Article',
+      content:
+        'This article discusses the current crisis in the cryptocurrency market and provides expert predictions about the future of digital currencies.',
+    },
+    {
+      id: 19,
+      title: 'Understanding DeFi: Decentralized Finance',
+      type: 'Course',
+      content:
+        'This course provides a comprehensive understanding of Decentralized Finance (DeFi), its applications, and its impact on the global financial system.',
+    },
+    {
+      id: 20,
+      title: 'The Rise of NFTs: Non-Fungible Tokens',
+      type: 'Article',
+      content:
+        'This article explores the rise of Non-Fungible Tokens (NFTs), their applications, and how they are changing the world of digital art and collectibles.',
+    },
+    {
+      id: 21,
+      title: 'Cryptocurrency Trading Strategies',
+      type: 'Course',
+      content:
+        'This course provides an in-depth understanding of various cryptocurrency trading strategies and how to apply them in different market conditions.',
+    },
+    {
+      id: 22,
+      title: 'Influence of Social Media on Cryptocurrency Markets',
+      type: 'Article',
+      content:
+        'This article discusses the significant influence of social media on cryptocurrency markets and how traders use social media trends for investment decisions.',
+    },
+    {
+      id: 23,
+      title: 'Exploring Altcoins: Beyond Bitcoin and Ethereum',
+      type: 'Course',
+      content:
+        'This course explores various alternative cryptocurrencies (Altcoins) beyond Bitcoin and Ethereum, their unique features, and their potential for future growth.',
+    },
+    {
+      id: 24,
+      title: 'The Impact of Cryptocurrency on the Global Economy',
+      type: 'Article',
+      content:
+        'This article discusses the impact of cryptocurrency on the global economy, its potential to disrupt traditional financial systems, and its implications for global economic policies.',
+    },
+    {
+      id: 25,
+      title: 'Blockchain Technology: Beyond Cryptocurrency',
+      type: 'Course',
+      content:
+        'This course explores the applications of blockchain technology beyond cryptocurrency, including supply chain, healthcare, finance, and more.',
+    },
   ];
 
   constructor(private http: HttpClient) {}
