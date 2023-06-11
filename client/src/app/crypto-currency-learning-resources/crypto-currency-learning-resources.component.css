@@ -41,3 +41,8 @@ mat-card {
   display: flex;
   justify-content: center;
 }
+
+mat-spinner {
+  margin: 0 auto;
+  display: block;
+}

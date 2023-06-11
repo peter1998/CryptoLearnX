@@ -2,10 +2,18 @@
   <div class="search-bar">
     <mat-form-field class="full-width">
       <input matInput placeholder="Search" [(ngModel)]="searchTerm" />
-      <button mat-raised-button color="primary" (click)="onSearch()">
-        Search
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clearSearch()"
+        *ngIf="searchTerm"
+      >
+        <mat-icon>clear</mat-icon>
       </button>
     </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSearch()">
+      Search
+    </button>
   </div>
   <div class="filters">
     <mat-form-field>
@@ -20,6 +28,8 @@
       </mat-select>
     </mat-form-field>
   </div>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <p *ngIf="error">{{ error }}</p>
   <div class="resources-list">
     <mat-card *ngFor="let resource of filteredResources">
       <mat-card-header>

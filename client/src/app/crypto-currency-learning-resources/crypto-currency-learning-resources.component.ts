@@ -13,6 +13,13 @@ export class CryptoCurrencyLearningResourcesComponent implements OnInit {
   resourceTypes: string[] = ['All', 'Article', 'Book', 'Course'];
   learningResources: any[] = [];
   filteredResources: any[] = [];
+  isLoading = false;
+  error = null;
+
+  clearSearch() {
+    this.searchTerm = '';
+    this.onSearch();
+  }
 
   constructor(private learningResourceService: LearningResourceService) {}
 
@@ -40,12 +47,18 @@ export class CryptoCurrencyLearningResourcesComponent implements OnInit {
   }
 
   fetchLearningResources() {
-    this.learningResourceService
-      .getLearningResources()
-      .subscribe((resources: any[]) => {
+    this.isLoading = true;
+    this.learningResourceService.getLearningResources().subscribe(
+      (resources: any[]) => {
         this.learningResources = resources;
         this.filterResources();
-      });
+        this.isLoading = false;
+      },
+      (error) => {
+        this.error = error.message;
+        this.isLoading = false;
+      }
+    );
   }
 
   filterResources() {
