@@ -2,22 +2,34 @@
   <div class="search-bar">
     <mat-form-field class="full-width">
       <input matInput placeholder="Search" [(ngModel)]="searchTerm" />
+      <button mat-raised-button color="primary" (click)="onSearch()">
+        Search
+      </button>
     </mat-form-field>
   </div>
   <div class="filters">
     <mat-form-field>
       <mat-label>Resource Type</mat-label>
-      <mat-select [(value)]="selectedResourceType">
-        <mat-option *ngFor="let type of resourceTypes" [value]="type">{{
-          type
-        }}</mat-option>
+      <mat-select
+        [(value)]="selectedResourceType"
+        (selectionChange)="onResourceTypeChange()"
+      >
+        <mat-option *ngFor="let type of resourceTypes" [value]="type">
+          {{ type }}
+        </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
   <div class="resources-list">
-    <div *ngFor="let resource of learningResources">
-      <!-- Display the resource details here -->
-    </div>
+    <mat-card *ngFor="let resource of filteredResources">
+      <mat-card-header>
+        <mat-card-title>{{ resource.title }}</mat-card-title>
+        <mat-card-subtitle>{{ resource.type }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ resource.content }}</p>
+      </mat-card-content>
+    </mat-card>
   </div>
   <div class="pagination">
     <!-- Pagination goes here -->

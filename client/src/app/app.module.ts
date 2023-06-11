@@ -41,6 +41,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { CryptoCurrencyLearningResourcesComponent } from './crypto-currency-learning-resources/crypto-currency-learning-resources.component';
 import { MatSelectModule } from '@angular/material/select';
+import { LearningResourceService } from './crypto-learning-resource.service';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -93,7 +94,11 @@ const routes: Routes = [
     MatSortModule,
     MatSelectModule,
   ],
-  providers: [CryptoCurrencyService, PriceMonitorService],
+  providers: [
+    CryptoCurrencyService,
+    PriceMonitorService,
+    LearningResourceService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
