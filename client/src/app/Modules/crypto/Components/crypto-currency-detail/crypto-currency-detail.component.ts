@@ -3,11 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Routes } from 'src/app/Constants/Routes';
 import { CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
 import { WatchlistService } from 'src/app/Services/watchlist.service';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-crypto-currency-detail',
   templateUrl: './crypto-currency-detail.component.html',
   styleUrls: ['./crypto-currency-detail.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CryptoCurrencyDetailComponent implements OnInit {
   cryptoCurrency: any;

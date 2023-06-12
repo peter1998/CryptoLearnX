@@ -15,6 +15,23 @@ import { CyberSecurityComponent } from './cyber-security/cyber-security.componen
 import { DiscussionForumComponent } from './discussion-forum/discussion-forum.component';
 import { IotLandingPageComponent } from './Modules/internet-of-things/Pages/iot-landing-page/iot-landing-page.component';
 import { CryptoModule } from './Modules/crypto/crypto.module';
+import { NgChartsModule } from 'ng2-charts';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './Modules/shared/alert/alert.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { PriceMonitorService } from './Services/price-monitor.service';
+import { CryptoComparisonComponent } from './Modules/crypto/Components/crypto-comparison/crypto-comparison.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatOptionModule } from '@angular/material/core';
+import { ComparisonTableComponent } from './Modules/crypto/Components/comparison-table/comparison-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSelectModule } from '@angular/material/select';
+import { LearningResourceService } from './Services/crypto-learning-resource.service';
+import { MatIconModule } from '@angular/material/icon';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -26,11 +43,12 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomepageComponent,
-
     UserProfileComponent,
     IotLandingPageComponent,
     CyberSecurityComponent,
     DiscussionForumComponent,
+    AlertComponent,
+    ComparisonTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,10 +56,10 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    FormsModule,
     CryptoModule,
+    TooltipModule.forRoot(),
   ],
-  providers: [],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}
