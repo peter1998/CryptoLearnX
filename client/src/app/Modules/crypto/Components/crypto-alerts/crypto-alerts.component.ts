@@ -1,11 +1,9 @@
 import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import {
-  CryptoCurrencyService,
-  CryptoCurrency,
-} from '../crypto-currency.service';
-import { PriceMonitorService } from '../price-monitor.service';
+import { CryptoCurrency, CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
+import { PriceMonitorService } from 'src/app/Services/price-monitor.service';
+
 
 @Component({
   selector: 'app-crypto-alerts',
@@ -89,7 +87,7 @@ export class CryptoAlertsComponent implements OnInit, OnDestroy {
       .subscribe((data: any) => {
         if (data.market_data.current_price.usd >= priceAlert.price) {
           this.addAlert(
-            `Price alert for ${priceAlert.crypto}: 
+            `Price alert for ${priceAlert.crypto}:
             Current price is $${data.market_data.current_price.usd}.
             The price changed by ${data.market_data.price_change_percentage_24h}% in the last 24 hours.
             The highest price in the last 24 hours was $${data.market_data.high_24h.usd}.

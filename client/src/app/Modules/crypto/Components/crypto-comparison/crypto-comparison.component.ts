@@ -2,11 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable, of } from 'rxjs';
 import { map, startWith, switchMap } from 'rxjs/operators';
-import {
-  CryptoCurrency,
-  CryptoCurrencyService,
-} from '../crypto-currency.service';
 import { ViewEncapsulation } from '@angular/core';
+import { CryptoCurrency, CryptoCurrencyService } from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-crypto-comparison',

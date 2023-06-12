@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LearningResourceService } from '../crypto-learning-resource.service';
+import { LearningResourceService } from 'src/app/Services/crypto-learning-resource.service';
 
 @Component({
   selector: 'app-crypto-currency-learning-resources',

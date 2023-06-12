@@ -6,9 +6,9 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { CryptoCurrency } from '../crypto-currency.service';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { CryptoCurrency } from 'src/app/Services/crypto-currency.service';
 
 @Component({
   selector: 'app-comparison-table',
