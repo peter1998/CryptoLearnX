@@ -2,12 +2,7 @@
   <div class="search-bar">
     <mat-form-field class="full-width">
       <input matInput placeholder="Search" [(ngModel)]="searchTerm" />
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="clearSearch()"
-        *ngIf="searchTerm"
-      >
+      <button mat-icon-button matSuffix (click)="clearSearch()" *ngIf="searchTerm">
         <mat-icon>clear</mat-icon>
       </button>
     </mat-form-field>
@@ -18,10 +13,7 @@
   <div class="filters">
     <mat-form-field>
       <mat-label>Resource Type</mat-label>
-      <mat-select
-        [(value)]="selectedResourceType"
-        (selectionChange)="onResourceTypeChange()"
-      >
+      <mat-select [(value)]="selectedResourceType" (selectionChange)="onResourceTypeChange()">
         <mat-option *ngFor="let type of resourceTypes" [value]="type">
           {{ type }}
         </mat-option>
@@ -46,6 +38,6 @@
   </div>
 </div>
 
-<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+<button class="back-to-landing-button" routerLink="/crypto">
   Back to Landing Page
 </button>

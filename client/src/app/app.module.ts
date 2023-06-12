@@ -26,12 +26,12 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
-import { ComparisonTableComponent } from './Modules/crypto/Components/comparison-table/comparison-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
 import { LearningResourceService } from './Services/crypto-learning-resource.service';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from './Modules/shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -47,8 +47,6 @@ const routes: Routes = [
     IotLandingPageComponent,
     CyberSecurityComponent,
     DiscussionForumComponent,
-    AlertComponent,
-    ComparisonTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,10 +54,10 @@ const routes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    CryptoModule,
     TooltipModule.forRoot(),
+    CryptoModule,
   ],
-  
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

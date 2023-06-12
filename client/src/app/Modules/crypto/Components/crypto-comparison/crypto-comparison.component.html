@@ -1,30 +1,15 @@
 <div class="container">
   <mat-form-field class="full-width">
-    <input
-      type="text"
-      placeholder="Search"
-      aria-label="Search"
-      matInput
-      [formControl]="searchControl"
-      [matAutocomplete]="auto"
-    />
+    <input type="text" placeholder="Search" aria-label="Search" matInput [formControl]="searchControl"
+      [matAutocomplete]="auto" />
     <mat-autocomplete #auto="matAutocomplete">
-      <mat-option
-        *ngFor="let option of filteredOptions | async"
-        [value]="option.id"
-      >
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option.id">
         {{ option.name }}
-        <button
-          class="custom-button"
-          (click)="$event.stopPropagation(); addCrypto(option)"
-        >
+        <button class="custom-button" (click)="$event.stopPropagation(); addCrypto(option)">
           Add
         </button>
-        <button
-          class="custom-button-info"
-          (click)="$event.stopPropagation()"
-          [routerLink]="['/cryptocurrency', option.id]"
-        >
+        <button class="custom-button-info" (click)="$event.stopPropagation()"
+          [routerLink]="['/cryptocurrency', option.id]">
           Info
         </button>
       </mat-option>
@@ -32,13 +17,11 @@
   </mat-form-field>
 
   <!-- CryptoComparisonComponent template -->
-  <app-comparison-table
-    [cryptocurrencies]="selectedCryptocurrencies"
-    (removeCrypto)="removeCrypto($event)"
-  ></app-comparison-table>
+  <app-comparison-table [cryptocurrencies]="selectedCryptocurrencies"
+    (removeCrypto)="removeCrypto($event)"></app-comparison-table>
   <button class="custom-button" (click)="fetchAllCryptos()">Show All</button>
 </div>
 
-<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+<button class="back-to-landing-button" routerLink="/crypto">
   Back to Landing Page
 </button>

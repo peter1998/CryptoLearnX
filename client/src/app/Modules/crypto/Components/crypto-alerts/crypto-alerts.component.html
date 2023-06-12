@@ -6,18 +6,11 @@
 
 <div class="alert-container">
   <div class="alert-card" *ngFor="let alert of alerts; index as i">
-    <img
-      [src]="alert.crypto.image"
-      alt="{{ alert.crypto.name }}"
-      class="crypto-logo"
-    />
+    <img [src]="alert.crypto.image" alt="{{ alert.crypto.name }}" class="crypto-logo" />
     <h2>{{ alert.crypto.name }}</h2>
     <p>Current Price: {{ alert.crypto.current_price }}</p>
     <p>24h Change: {{ alert.crypto.price_change_percentage_24h }}%</p>
-    <app-alert
-      [message]="'Alert set at price ' + alert.price"
-      (dismiss)="dismissAlertCard(i)"
-    ></app-alert>
+    <app-alert [message]="'Alert set at price ' + alert.price" (dismiss)="dismissAlertCard(i)"></app-alert>
   </div>
 </div>
 
@@ -43,17 +36,14 @@
       <p>{{ alert.message }}</p>
     </div>
     <div class="alert-actions">
-      <button
-        class="btn btn-sm btn-outline-secondary"
-        (click)="dismissAlert(i)"
-        matTooltip="Dismiss this information for the alert card"
-      >
+      <button class="btn btn-sm btn-outline-secondary" (click)="dismissAlert(i)"
+        matTooltip="Dismiss this information for the alert card">
         Info
       </button>
     </div>
   </div>
 </div>
 
-<button class="back-to-landing-button" routerLink="/cryptocurrency-landing">
+<button class="back-to-landing-button" routerLink="/crypto">
   Back to Landing Page
 </button>

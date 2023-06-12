@@ -25,6 +25,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { SharedModule } from '../shared/shared.module';
 import { LearningResourceService } from 'src/app/Services/crypto-learning-resource.service';
 import { PriceMonitorService } from 'src/app/Services/price-monitor.service';
+import { ComparisonTableComponent } from './Components/comparison-table/comparison-table.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,7 @@ import { PriceMonitorService } from 'src/app/Services/price-monitor.service';
     CryptoAlertsComponent,
     CryptoComparisonComponent,
     CryptoCurrencyLearningResourcesComponent,
+    ComparisonTableComponent,
   ],
   imports: [
     CommonModule,
@@ -49,10 +54,12 @@ import { PriceMonitorService } from 'src/app/Services/price-monitor.service';
     MatFormFieldModule,
     MatIconModule,
     MatSelectModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatInputModule,
     NgChartsModule,
     FormsModule,
     ReactiveFormsModule,
-
     SharedModule,
   ],
   providers: [PriceMonitorService, LearningResourceService],
