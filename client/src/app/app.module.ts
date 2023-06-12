@@ -21,7 +21,7 @@ import { AlertComponent } from './Modules/shared/alert/alert.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { PriceMonitorService } from './Services/price-monitor.service';
-import { CryptoComparisonComponent } from './Modules/crypto/Components/crypto-comparison/crypto-comparison.component';
+import { CryptoComparisonComponent } from './Modules/crypto/Pages/crypto-comparison/crypto-comparison.component';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';

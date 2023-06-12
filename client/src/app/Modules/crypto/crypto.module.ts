@@ -8,17 +8,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { CryptoRoutingModule } from './crypto-routing.module';
 
-import { CryptoCurrencyDetailComponent } from './Components/crypto-currency-detail/crypto-currency-detail.component';
+import { CryptoCurrencyDetailComponent } from './Pages/crypto-currency-detail/crypto-currency-detail.component';
 import { CartPageComponent } from 'src/app/cart-page/cart-page.component';
-import { CryptoCurrencyListComponent } from './Components/crypto-currency-list/crypto-currency-list.component';
-import { CryptoCurrencyLandingComponent } from './Components/crypto-currency-landing/crypto-currency-landing.component';
-import { CryptoNewsComponent } from './Components/crypto-news/crypto-news.component';
+import { CryptoCurrencyListComponent } from './Pages/crypto-currency-list/crypto-currency-list.component';
+import { CryptoCurrencyLandingComponent } from './Pages/crypto-currency-landing/crypto-currency-landing.component';
+import { CryptoNewsComponent } from './Pages/crypto-news/crypto-news.component';
 import { CryptoInteractiveChartComponent } from './Components/crypto-interactive-chart/crypto-interactive-chart.component';
-import { CryptoCalculatorComponent } from './Components/crypto-calculator/crypto-calculator.component';
+import { CryptoCalculatorComponent } from './Pages/crypto-calculator/crypto-calculator.component';
 import { LivePriceTickerComponent } from './Components/live-price-ticker/live-price-ticker.component';
-import { CryptoAlertsComponent } from './Components/crypto-alerts/crypto-alerts.component';
-import { CryptoComparisonComponent } from './Components/crypto-comparison/crypto-comparison.component';
-import { CryptoCurrencyLearningResourcesComponent } from './Components/crypto-currency-learning-resources/crypto-currency-learning-resources.component';
+import { CryptoAlertsComponent } from './Pages/crypto-alerts/crypto-alerts.component';
+import { CryptoComparisonComponent } from './Pages/crypto-comparison/crypto-comparison.component';
+import { CryptoCurrencyLearningResourcesComponent } from './Pages/crypto-currency-learning-resources/crypto-currency-learning-resources.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
