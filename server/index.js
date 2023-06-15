@@ -1,8 +1,9 @@
-// server.js
-
 // Import the necessary packages
 const express = require("express");
 const bodyParser = require("body-parser");
+
+// Import the routes
+const routes = require("./routes");
 
 // Create an instance of express
 const app = express();
@@ -15,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+// Use the routes
+app.use(routes);
 
 // Start the server on port 3000
 app.listen(3000, () => {
