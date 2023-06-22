@@ -1,17 +1,22 @@
-<div class="landing-container">
+<div>
   <mat-card class="landing-card">
     <mat-card-header>
-      <mat-card-title class="crypto-title">Welcome to the Cryptocurrency Section</mat-card-title>
+      <mat-card-title class="crypto-title">
+        <h1 class="heading">Welcome to the Cryptocurrency Section</h1>
+        <p class="description">
+          Explore the fascinating world of cryptocurrencies, stay updated with
+          real-time price data, and keep track of your favorite digital assets.
+        </p>
+      </mat-card-title>
+
     </mat-card-header>
-    <mat-card-content>
-      <p class="crypto-description">
-        Explore the fascinating world of cryptocurrencies, stay updated with
-        real-time price data, and keep track of your favorite digital assets.
-      </p>
-      <app-live-price-ticker></app-live-price-ticker>
-      <app-crypto-interactive-chart></app-crypto-interactive-chart>
+
+    <mat-card-content class="content">
+      <app-live-price-ticker class="tracker"></app-live-price-ticker>
+      <app-crypto-interactive-chart class="chart"></app-crypto-interactive-chart>
     </mat-card-content>
-    <mat-card-actions>
+
+    <mat-card-actions class="buttons">
       <button mat-raised-button color="primary" class="crypto-button" routerLink="/list">
         View List of Cryptocurrencies
       </button>
