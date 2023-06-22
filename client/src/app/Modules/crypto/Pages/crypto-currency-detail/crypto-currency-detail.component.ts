@@ -23,13 +23,11 @@ export class CryptoCurrencyDetailComponent implements OnInit {
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
     if (id !== null) {
       this.cryptoCurrencyService.getCryptoCurrency(id).subscribe({
         next: (data: any) => {
           this.cryptoCurrency = data;
           this.cryptoCurrency.desc = data.description['en'].split('\n')[0];
-          console.log(this.cryptoCurrency);
         },
         error: (error: any) => {
           console.error('Error fetching cryptocurrency', error);
@@ -51,10 +49,10 @@ export class CryptoCurrencyDetailComponent implements OnInit {
       market_cap_rank: this.cryptoCurrency.market_cap_rank,
     };
     this.watchlistService.addToWatchlist(watchlistItem);
-    this.router.navigate([Routes.Watchilist]);
+    this.router.navigate(['/watchlist']);
   }
 
-  goBack(): void {
-    this.router.navigate([Routes.Crypto.List]);
+  goBack() {
+    this.router.navigateByUrl('/crypto/list');
   }
 }
