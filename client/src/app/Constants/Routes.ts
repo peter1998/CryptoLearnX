@@ -3,7 +3,11 @@ export class Routes {
     Landing: '/crypto';
     List: '/crypto/list';
   };
-  static Iot: {};
-  static Cyber: {};
+  static Iot: {
+    Landing: '/iot';
+  };
+  static Cyber: {
+    Landing: '/cyber';
+  };
   static Watchilist: '/watchlist';
 }
