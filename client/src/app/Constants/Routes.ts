@@ -9,5 +9,5 @@ export class Routes {
   static Cyber: {
     Landing: '/cyber';
   };
-  static Watchilist: '/watchlist';
+  static Watchlist: '/watchlist';
 }
