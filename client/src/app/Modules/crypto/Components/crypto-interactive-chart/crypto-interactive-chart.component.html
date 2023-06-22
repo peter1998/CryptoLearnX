@@ -1,25 +1,17 @@
 <div class="chart-container">
-  <select (change)="onCryptoChange($event)">
-    <option *ngFor="let crypto of cryptocurrencies" [value]="crypto.id">
-      {{ crypto.name }}
-    </option>
-  </select>
 
-  <img
-    *ngIf="selectedCrypto"
-    [src]="selectedCrypto.image"
-    alt="Crypto Icon"
-    class="crypto-icon"
-  />
+  <div class="select-container">
+    <select class="selection" (change)="onCryptoChange($event)">
+      <option *ngFor="let crypto of cryptocurrencies" [value]="crypto.id">
+        {{ crypto.name }}
+      </option>
+    </select>
 
-  <canvas
-    baseChart
-    [datasets]="chartData"
-    [labels]="chartLabels"
-    [options]="chartOptions"
-    [plugins]="chartPlugins"
-    [legend]="chartLegend"
-    [type]="chartType"
-  >
+    <img class="selection-image" *ngIf="selectedCrypto" [src]="selectedCrypto.image" alt="Crypto Icon" class="crypto-icon" />
+  </div>
+
+
+  <canvas baseChart [datasets]="chartData" [labels]="chartLabels" [options]="chartOptions" [plugins]="chartPlugins"
+    [legend]="chartLegend" [type]="chartType">
   </canvas>
 </div>
