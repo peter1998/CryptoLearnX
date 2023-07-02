@@ -22,6 +22,7 @@ export class CryptoCalculatorComponent implements OnInit {
   ngOnInit(): void {
     this.cryptoCurrencyService.getCryptocurrencies().subscribe((cryptos) => {
      this.cryptos = cryptos;
+     this.calculate();
     });
   }
 

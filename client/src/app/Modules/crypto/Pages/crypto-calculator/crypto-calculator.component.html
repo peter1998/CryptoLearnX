@@ -1,41 +1,65 @@
-<div class="crypto-calculator">
+<div class="calculator">
   <h2>Cryptocurrency Calculator</h2>
-  <div class="input-group">
-    <input [(ngModel)]="amount" type="number" min="0" step="0.01" placeholder="Enter amount" />
-    <select [(ngModel)]="crypto1Index" (change)="calculate()">
-      <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
-        {{ crypto.name }}
-      </option>
-    </select>
-  </div>
-  <div class="result-group">
-    <span>=</span>
-    <span>{{ result }}</span>
-    <select [(ngModel)]="crypto2Index" (change)="calculate()">
-      <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
-        {{ crypto.name }}
-      </option>
-    </select>
-  </div>
-  <button (click)="calculate()">Calculate</button>
+
+  <section class="input-section">
+    <div class="input-group">
+      <select [(ngModel)]="crypto1Index" (change)="calculate()">
+        <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
+          {{ crypto.name }}
+        </option>
+      </select>
+      <input [(ngModel)]="amount" type="number" min="0" step="0.01" placeholder="Enter amount" (keyup)="calculate()" />
+    </div>
+    <div class="result-group">
+      <select [(ngModel)]="crypto2Index" (change)="calculate()">
+        <option *ngFor="let crypto of cryptos; let i = index" [value]="i">
+          {{ crypto.name }}
+        </option>
+      </select>
+      <span>=</span>
+      <span>{{ result }}</span>
+    </div>
+    <!-- <button class="result-button" (click)="calculate()">Calculate</button> -->
+  </section>
+
+
+
   <div class="crypto-info" *ngIf="cryptos[crypto1Index] && cryptos[crypto2Index]">
     <h3>Additional Information</h3>
-    <p>
-      <img [src]="cryptos[crypto1Index].image" alt="{{ cryptos[crypto1Index].name }}" width="50" height="50" />
+    <table class="coins-table">
+      <tr>
+        <th></th>
+        <th class="col">
+          <p class="coin-info">
+            <img [src]="cryptos[crypto1Index].image" alt="{{ cryptos[crypto1Index].name }}" width="50" height="50" />
 
-      <strong>{{ cryptos[crypto1Index].name }}</strong>
-    </p>
-    <p>Current Price: {{ cryptos[crypto1Index].current_price }}</p>
-    <p>Market Cap: {{ cryptos[crypto1Index].market_cap }}</p>
-    <p>Total Volume: {{ cryptos[crypto1Index].total_volume }}</p>
-    <p>
-      <img [src]="cryptos[crypto2Index].image" alt="{{ cryptos[crypto2Index].name }}" width="50" height="50" />
+            <strong>{{ cryptos[crypto1Index].name }}</strong>
+          </p>
+        </th>
+        <th class="col">
+          <p class="coin-info">
+            <img [src]="cryptos[crypto2Index].image" alt="{{ cryptos[crypto2Index].name }}" width="50" height="50" />
 
-      <strong>{{ cryptos[crypto2Index].name }}</strong>
-    </p>
-    <p>Current Price: {{ cryptos[crypto2Index].current_price }}</p>
-    <p>Market Cap: {{ cryptos[crypto2Index].market_cap }}</p>
-    <p>Total Volume: {{ cryptos[crypto2Index].total_volume }}</p>
+            <strong>{{ cryptos[crypto2Index].name }}</strong>
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <td>Current Price:</td>
+        <td class="col">{{ cryptos[crypto1Index].current_price }}</td>
+        <td class="col">{{ cryptos[crypto2Index].current_price }}</td>
+      </tr>
+      <tr>
+        <td>Market Cap:</td>
+        <td class="col">{{ cryptos[crypto1Index].market_cap }}</td>
+        <td class="col">{{ cryptos[crypto2Index].market_cap }}</td>
+      </tr>
+      <tr>
+        <td>Total Volume:</td>
+        <td class="col">{{ cryptos[crypto1Index].total_volume }}</td>
+        <td class="col">{{ cryptos[crypto2Index].total_volume }}</td>
+      </tr>
+    </table>
   </div>
 </div>
 
