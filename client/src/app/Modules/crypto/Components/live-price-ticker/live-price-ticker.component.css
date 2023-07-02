@@ -11,10 +11,9 @@ container {
 
 .ticker-scrollable {
   overflow: hidden;
-  height: 400px;
-  /* Set a fixed height for the container */
+  height: 50vh;
+
   overflow-y: auto;
-  /* Add a vertical scrollbar when the content exceeds the container's height */
 }
 
 @keyframes tickerScroll {
