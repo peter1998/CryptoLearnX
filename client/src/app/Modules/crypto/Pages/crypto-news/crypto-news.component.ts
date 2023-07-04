@@ -18,32 +18,24 @@ export class CryptoNewsComponent implements OnInit {
     private sanitizer: DomSanitizer
   ) {}
 
+  // TODO: Don't use dummy data
   ngOnInit() {
     this.loading = true;
-    this.cryptoNewsService.getNews('BTC').subscribe({
+    this.cryptoNewsService.getBitcoinNews().subscribe({
       next: (data) => {
-        this.news.push(...this.sanitizeNews(data.results));
+        this.news.push(...this.sanitizeNews(data));
       },
       error: (error) => {
         console.error('Error fetching news', error);
       },
     });
-    this.cryptoNewsService.getNews('ETH').subscribe({
+    this.cryptoNewsService.getEthereumNews().subscribe({
       next: (data) => {
-        this.news.push(...this.sanitizeNews(data.results));
-      },
-      error: (error) => {
-        console.error('Error fetching news', error);
-      },
-    });
-    this.cryptoNewsService.getNews('BNB').subscribe({
-      next: (data) => {
-        this.news.push(...this.sanitizeNews(data.results));
+        this.news.push(...this.sanitizeNews(data));
         this.loading = false;
       },
       error: (error) => {
         console.error('Error fetching news', error);
-        this.loading = false;
       },
     });
   }
@@ -59,8 +51,8 @@ export class CryptoNewsComponent implements OnInit {
   sanitizeNews(news: any[]): any[] {
     return news.map((article) => ({
       ...article,
-      safeUrl: this.sanitizer.bypassSecurityTrustUrl(article.url),
-      url: article.url,
+      safeUrl: this.getSafeUrl(article.article_url),
+      url: article.article_url,
     }));
   }
 }

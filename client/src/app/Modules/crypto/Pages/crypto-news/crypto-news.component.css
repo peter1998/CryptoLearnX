@@ -1,5 +1,3 @@
-/* crypto-news.component.css */
-
 .spinner-container {
   display: flex;
   justify-content: center;
@@ -7,7 +5,7 @@
   height: 100vh;
 }
 
-.crypto-news {
+.news {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -16,8 +14,8 @@
   color: #fff;
 }
 
-.news-article {
-  max-width: 800px;
+.article {
+  width: 800px;
   margin-bottom: 20px;
   padding: 20px;
   background-color: #262626;
@@ -25,25 +23,34 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.news-header {
+.article-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.news-title {
+.article-title {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.news-description {
+.article-image {
+  width: 100%;
+  width: 720px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  display: block;
+}
+
+.article-description {
   font-size: 1rem;
   margin-bottom: 20px;
 }
 
 .read-more {
-  display: block;
+  display: inline;
   font-size: 1rem;
   color: #00ff00;
   text-decoration: none;
@@ -53,13 +60,7 @@
 .read-more:hover {
   color: #00cc00;
   text-decoration: underline;
-}
 
-.news-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  border-radius: 5px;
 }
 
 .back-to-landing-button {
