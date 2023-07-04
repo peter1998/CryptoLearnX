@@ -26,6 +26,7 @@ export class CryptoCurrencyLearningResourcesComponent implements OnInit {
   ngOnInit() {
     this.fetchLearningResources();
     this.filterResources();
+    this.onSearch();
   }
 
   onResourceTypeChange() {
