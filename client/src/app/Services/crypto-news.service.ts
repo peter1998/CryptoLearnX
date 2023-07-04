@@ -19,4 +19,18 @@ export class CryptoNewsService {
       this.url + ticker + '&apiKey=' + environment.PolygonApiKey
     );
   }
+
+  // TODO: Remove this when not needed
+  getBitcoinNews(): Observable<any> {
+    return this.http.get(
+      'https://raw.githubusercontent.com/peter1998/CryptoLearnX/main/client/dummy_data/bitcoin_dummy_articles.json'
+    );
+  }
+
+  // TODO: Remove this when not needed
+  getEthereumNews(): Observable<any> {
+    return this.http.get(
+      'https://raw.githubusercontent.com/peter1998/CryptoLearnX/main/client/dummy_data/ethereum_dummy_articles.json'
+    );
+  }
 }
