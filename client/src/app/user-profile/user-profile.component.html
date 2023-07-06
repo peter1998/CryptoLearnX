@@ -1,5 +1,11 @@
-<div class="user-profile">
-  <h2>{{ user.name }}</h2>
-  <p>{{ user.email }}</p>
-  <p>{{ user.address }}</p>
-</div>
+<mat-card>
+  <mat-card-content>
+    <div class="user-container">
+      <h2>{{ $user!.firstName + $user!.lastName }}</h2>
+      <p>{{ $user!.email }}</p>
+      <div class="image-container">
+        <img src="{{$user!.profilePicture}}" alt="profile-picture">
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
