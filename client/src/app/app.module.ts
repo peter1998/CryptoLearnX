@@ -3,7 +3,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,23 +14,7 @@ import { CyberSecurityComponent } from './cyber-security/cyber-security.componen
 import { DiscussionForumComponent } from './discussion-forum/discussion-forum.component';
 import { IotLandingPageComponent } from './Modules/internet-of-things/Pages/iot-landing-page/iot-landing-page.component';
 import { CryptoModule } from './Modules/crypto/crypto.module';
-import { NgChartsModule } from 'ng2-charts';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AlertComponent } from './Modules/shared/alert/alert.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { PriceMonitorService } from './Services/price-monitor.service';
-import { CryptoComparisonComponent } from './Modules/crypto/Pages/crypto-comparison/crypto-comparison.component';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatOptionModule } from '@angular/material/core';
-import { MatTableModule } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatSelectModule } from '@angular/material/select';
-import { LearningResourceService } from './Services/crypto-learning-resource.service';
-import { MatIconModule } from '@angular/material/icon';
-import { SharedModule } from './Modules/shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
