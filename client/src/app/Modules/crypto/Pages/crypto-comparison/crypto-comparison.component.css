@@ -53,10 +53,12 @@ td {
   flex: 1;
 }
 
+/*
+TODO: Produces bug on crypto calculator table
 th {
   background-color: #4caf50;
   color: black;
-}
+} */
 
 .full-width-table {
   width: 100%;
