@@ -1,0 +1,46 @@
+.container {
+  margin: 62px 0px 42px 0px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo-container {
+  margin-left: 10px;
+}
+
+.logo {
+  display: block;
+  width: 120px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 7.2px;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+.link-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.link-list li {
+  margin-right: 28px;
+}
+
+.link-list a {
+  color: #FFF;
+  font-family: Outfit;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+  text-decoration: none;
+}

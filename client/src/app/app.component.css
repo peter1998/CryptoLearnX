@@ -1,0 +1,4 @@
+.grid {
+  display: grid;
+  grid-template-columns: 195px 1fr 195px;
+}

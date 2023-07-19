@@ -1,26 +1,40 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component';
 import { CartPageComponent } from './cart-page/cart-page.component';
-import { IotLandingPageComponent } from './Modules/internet-of-things/Pages/iot-landing-page/iot-landing-page.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
-  { path: '', component: HomepageComponent },
-  { path: 'iot', component: IotLandingPageComponent },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./Modules/core/core.module').then((m) => m.CoreModule),
+  },
   {
     path: 'cyber',
     loadChildren: () =>
-      import('./Modules/cyber-security/cyber-security.module').then((m) => m.CyberSecurityModule),
+      import('./Modules/cyber-security/cyber-security.module').then(
+        (m) => m.CyberSecurityModule
+      ),
   },
-  { path: 'watchlist', component: CartPageComponent },
   {
     path: 'crypto',
     loadChildren: () =>
       import('./Modules/crypto/crypto.module').then((m) => m.CryptoModule),
   },
+  {
+    path: 'iot',
+    loadChildren: () =>
+      import('./Modules/internet-of-things/internet-of-things.module').then(
+        (m) => m.InternetOfThingsModule
+      ),
+  },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./Modules/user/user.module').then((m) => m.UserModule),
+  },
+
+  { path: 'alerts', component: CartPageComponent },
   { path: 'cart', component: CartPageComponent },
-  { path: 'profile', component: UserProfileComponent },
 ];
 
 @NgModule({

@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'list', component: CryptoCurrencyListComponent },
   { path: 'news', component: CryptoNewsComponent },
   { path: 'calculator', component: CryptoCalculatorComponent },
-
   { path: 'alerts', component: CryptoAlertsComponent },
   { path: 'comparison', component: CryptoComparisonComponent },
   {
