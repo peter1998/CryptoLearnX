@@ -14,74 +14,10 @@
   </section>
 
   <section class="boards-container">
-    <!--  -->
-    <div class="board">
-      <div class="board-desc">
-        <h2>Cryptocurrencies</h2>
-        <div class="board-info">
-          <p>
-            Discover a wide range of digital currencies and stay updated with real-time market prices, trends, and
-            historical data.
-          </p>
-          <p>
-            Whether you're an experienced investor or a curious beginner, our comprehensive resources
-            will help you navigate the exciting realm of cryptocurrencies with confidence.
-          </p>
-        </div>
-        <div>
-          <a routerLink="/crypto">Learn More</a>
-        </div>
-      </div>
 
-      <div class="board-img">
-        <img src="/assets/cryptocurrencies-landing.jpeg" alt="cryptocurrencies">
-      </div>
-    </div>
-
-    <div class="board">
-      <div class="board-img">
-        <img src="/assets/iot-landing.jpeg" alt="internet-of-things">
-      </div>
-
-      <div class="board-desc">
-        <h2>Internet Of Things</h2>
-        <div class="board-info">
-          <p>
-            Dive into the interconnected world of IoT devices and discover their impact on industries. Learn about the
-            latest trends, functionalities, and security measures for IoT devices.
-          </p>
-          <p>
-            Stay informed about network status, vulnerabilities, and best practices for securing your IoT ecosystem.
-          </p>
-        </div>
-        <div class="button-left">
-          <a routerLink="/iot">Learn More</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="board">
-      <div class="board-desc">
-        <h2>Cybersecurity</h2>
-        <div class="board-info">
-          <p>
-            Explore common cyber threats, learn best practices to protect your personal and financial information, and
-            discover techniques to secure your digital presence.
-          </p>
-          <p>
-            Stay up-to-date with the latest news, articles, and insights into encryption, secure communication, and
-            safeguarding against cyber attacks.
-          </p>
-        </div>
-        <div>
-          <a routerLink="/iot">Learn More</a>
-        </div>
-      </div>
-
-      <div class="board-img">
-        <img src="/assets/cyber-landing.jpeg" alt="cybersecurity">
-      </div>
-    </div>
+    <ng-container *ngFor="let data of boards">
+      <app-landing-board [data]="data"></app-landing-board>
+    </ng-container>
 
   </section>
 
