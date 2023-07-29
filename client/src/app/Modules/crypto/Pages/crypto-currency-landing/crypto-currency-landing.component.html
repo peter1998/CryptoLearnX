@@ -1,0 +1,43 @@
+<div>
+  <mat-card class="landing-card">
+    <mat-card-header>
+      <mat-card-title class="crypto-title">
+        <h1 class="heading">Welcome to the Cryptocurrency Section</h1>
+        <p class="description">
+          Explore the fascinating world of cryptocurrencies, stay updated with
+          real-time price data, and keep track of your favorite digital assets.
+        </p>
+      </mat-card-title>
+
+    </mat-card-header>
+
+    <mat-card-content class="content">
+      <app-live-price-ticker class="tracker"></app-live-price-ticker>
+      <app-crypto-interactive-chart class="chart"></app-crypto-interactive-chart>
+    </mat-card-content>
+
+    <mat-card-actions class="buttons">
+      <button mat-raised-button color="primary" class="crypto-button" routerLink="list">
+        View List of Cryptocurrencies
+      </button>
+      <button mat-raised-button color="accent" class="crypto-button" routerLink="news">
+        View Crypto News
+      </button>
+      <button mat-raised-button color="warn" class="crypto-button" routerLink="calculator">
+        Crypto Calculator
+      </button>
+      <button mat-raised-button color="primary" class="crypto-button" routerLink="alerts">
+        Set Price Alerts
+      </button>
+      <button mat-raised-button color="accent" class="crypto-button" routerLink="comparison">
+        Compare Cryptocurrencies
+      </button>
+      <button mat-raised-button color="warn" class="crypto-button" routerLink="resources">
+        Learning Resources
+      </button>
+      <button mat-raised-button color="primary" class="crypto-button" routerLink="/user">
+        My Profile
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

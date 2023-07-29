@@ -1,0 +1,19 @@
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!loading && news.length > 0" class="news">
+  <div *ngFor="let article of news" class="article">
+    <div class="article-header">
+      <h2 class="article-title">{{ article.title }}</h2>
+    </div>
+    <img [src]="article.image_url" alt="image" class="article-image" />
+    <p class="article-description">{{ article.description }}</p>
+    <a href="{{article.article_url}}" target="_blank" rel="noopener noreferrer" class="read-more mat-button">Read
+      more</a>
+  </div>
+</div>
+
+<button class="back-to-landing-button" routerLink="/crypto">
+  Back to Landing Page
+</button>

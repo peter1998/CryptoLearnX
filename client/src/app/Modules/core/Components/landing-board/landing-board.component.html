@@ -1,0 +1,16 @@
+<div #board class="{{isReversed(data.board_reversed,'board','board board-reversed')}}">
+  <div class="board-desc">
+    <h2>{{data.title}}</h2>
+    <div class="board-info">
+      <p> {{data.info_one}} </p>
+      <p>{{data.info_two}}</p>
+    </div>
+    <div class="{{isReversed(data.board_reversed,'','button-left')}}">
+      <a routerLink="{{data.link}}">Learn More</a>
+    </div>
+  </div>
+
+  <div class="board-img">
+    <img src="{{data.image}}" alt="{{data.title.toLowerCase()}}">
+  </div>
+</div>

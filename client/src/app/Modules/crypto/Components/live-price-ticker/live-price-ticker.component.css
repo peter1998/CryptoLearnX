@@ -1,0 +1,108 @@
+container {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.ticker-title {
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.ticker-scrollable {
+  overflow: hidden;
+  height: 50vh;
+
+  overflow-y: auto;
+}
+
+@keyframes tickerScroll {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(calc(-100% + 200px));
+    /* Adjust this value based on the height of your container */
+  }
+}
+
+.ticker-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 25px 25px 25px;
+  padding: 10px;
+  background-color: #262626;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+}
+
+.crypto-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.crypto-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-price {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.price-up {
+  color: #00ff00;
+}
+
+.price-down {
+  color: #ff0000;
+}
+
+.price-stable {
+  color: #cccccc;
+}
+
+.price-change {
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+.crypto-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.high-price,
+.low-price,
+.market-cap,
+.volume {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}

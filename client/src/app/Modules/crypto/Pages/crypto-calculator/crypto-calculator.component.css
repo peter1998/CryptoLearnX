@@ -1,0 +1,113 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  max-width: 30%;
+  margin: 30px auto;
+  background-color: #f9f9f9;
+}
+
+.result-group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* .result-button {
+  width: 45%;
+} */
+
+.calculator h2 {
+  margin-bottom: 20px;
+}
+
+.calculator .input-group,
+.calculator .result-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.calculator input,
+.calculator select {
+  padding: 5px;
+}
+
+.calculator button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: #0056b3;
+}
+
+.crypto-info {
+  margin-top: 20px;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.crypto-info h3 {
+  margin-bottom: 10px;
+}
+
+.crypto-info p {
+  margin: 5px 0;
+}
+
+.selected-coins {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.back-to-landing-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  padding: 20px;
+  background-color: #ff7700;
+  color: #fff;
+  border: none;
+  border-radius: 70%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-landing-button:hover {
+  background-color: #b30080;
+}
+
+.coin-info {
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+}
+
+.coins-table {
+  width: 100%;
+  text-align: left;
+}
+
+.coin-info strong {
+  padding-left: 10px;
+}
+
+td:first-child {
+  width: 20%;
+}
+
+.col {
+  width: 30%;
+}

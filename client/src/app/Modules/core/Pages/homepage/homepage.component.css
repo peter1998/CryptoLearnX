@@ -1,0 +1,46 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  border-radius: 25px;
+  padding-bottom: 27px;
+}
+
+.hero img {
+  width: 686px;
+  height: 458px;
+}
+
+.hero a {
+  background-color: #FCFCFC;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 30px;
+  border-radius: 25px;
+}
+
+.hero-heading {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FCFCFC;
+  text-align: center;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.boards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

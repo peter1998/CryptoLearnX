@@ -1,0 +1,24 @@
+<section>
+
+  <section class="hero">
+    <div class="hero-heading">
+      <p>Discover the future of</p>
+      <p>Technology and Security</p>
+    </div>
+    <div>
+      <img src="/assets/hero-section-bg.jpeg" alt="hero-section-background">
+    </div>
+    <div>
+      <a href="auth">Get Started Now</a>
+    </div>
+  </section>
+
+  <section class="boards-container">
+
+    <ng-container *ngFor="let data of boards">
+      <app-landing-board [data]="data"></app-landing-board>
+    </ng-container>
+
+  </section>
+
+</section>

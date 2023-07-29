@@ -1,0 +1,22 @@
+<div class="container" *ngIf="prices">
+  <h2 class="ticker-title">Live Price Ticker</h2>
+
+  <div class="ticker-scrollable">
+    <div *ngFor="let price of prices" class="ticker-item">
+      <img [src]="price.image" alt="Crypto Icon" class="crypto-icon" />
+      <h3>{{ price.name }}</h3>
+      <p class="current-price" [ngClass]="{
+          'price-up': price.price_change_percentage_24h > 0,
+          'price-down': price.price_change_percentage_24h < 0,
+          'price-stable': price.price_change_percentage_24h === 0
+        }">
+        {{ price.current_price }}
+        <span class="price-change">
+          ({{ price.price_change_percentage_24h | number : "1.2-2" }}%)
+        </span>
+      </p>
+      <p class="high-price">24h High: {{ price.high_24h }}</p>
+      <p class="low-price">24h Low: {{ price.low_24h }}</p>
+    </div>
+  </div>
+</div>
