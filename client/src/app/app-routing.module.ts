@@ -4,11 +4,6 @@ import { CartPageComponent } from './cart-page/cart-page.component';
 
 const routes: Routes = [
   {
-    path: '',
-    loadChildren: () =>
-      import('./Modules/core/core.module').then((m) => m.CoreModule),
-  },
-  {
     path: 'cyber',
     loadChildren: () =>
       import('./Modules/cyber-security/cyber-security.module').then(
@@ -31,6 +26,11 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () =>
       import('./Modules/user/user.module').then((m) => m.UserModule),
+  },
+  {
+    path: '',
+    loadChildren: () =>
+      import('./Modules/core/core.module').then((m) => m.CoreModule),
   },
 
   { path: 'alerts', component: CartPageComponent },
