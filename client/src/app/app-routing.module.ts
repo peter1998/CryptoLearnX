@@ -28,6 +28,11 @@ const routes: Routes = [
       import('./Modules/user/user.module').then((m) => m.UserModule),
   },
   {
+    path: 'auth',
+    loadChildren: () =>
+      import('./Modules/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
     path: '',
     loadChildren: () =>
       import('./Modules/core/core.module').then((m) => m.CoreModule),
