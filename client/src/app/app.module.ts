@@ -10,6 +10,10 @@ import { DiscussionForumComponent } from './discussion-forum/discussion-forum.co
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from './Modules/shared/shared.module';
+//For local testing enviroment
+//TODO: change import
+import { environment } from '../environments/environment test';
+import { AngularFireModule } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [AppComponent, DiscussionForumComponent],
@@ -21,8 +25,8 @@ import { SharedModule } from './Modules/shared/shared.module';
     TooltipModule.forRoot(),
     MatCardModule,
     SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
-
   bootstrap: [AppComponent],
 })
 export class AppModule {}
