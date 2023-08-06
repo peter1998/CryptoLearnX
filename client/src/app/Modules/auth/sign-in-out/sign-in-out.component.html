@@ -1,0 +1,48 @@
+<section class="container">
+
+  <section class="register half">
+    <section class="headings">
+      <h2>Start your journey here!</h2>
+      <p>it’s free and takes only minute.</p>
+    </section>
+
+    <form [formGroup]="registrationForm" autocomplete="off">
+      <div>
+        <input class="default-size" id="email" type="text" placeholder="Email..." autocomplete="off"
+          formControlName="email">
+      </div>
+      <div>
+        <input class="default-size" id="pass" type="password" placeholder="Password..." autocomplete="off"
+          formControlName="pass">
+      </div>
+      <div>
+        <input class="default-size" id="repass" type="password" placeholder="Repeat Password..." autocomplete="off"
+          formControlName="repass">
+      </div>
+    </form>
+    <button class="submit default-size" (click)="onRegister()">Register</button>
+  </section>
+
+  <section class="seperator">
+
+  </section>
+
+  <section class="login half">
+    <section class="headings">
+      <h2>Already a member?</h2>
+      <p>Login here:</p>
+    </section>
+
+    <form [formGroup]="loginForm">
+      <div>
+        <input class="default-size" id="email" type="text" placeholder="Email..." formControlName="email">
+      </div>
+      <div>
+        <input class="default-size" id="pass" type="password" placeholder="Password..." formControlName="pass">
+      </div>
+    </form>
+
+    <button class="submit default-size" (click)="onLogin()">Login</button>
+  </section>
+
+</section>
